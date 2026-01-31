@@ -1,5 +1,5 @@
 import {useContext, useState} from 'react';
-import {useNavigate, Link} from 'react-router-dom';
+import {useNavigate, Link, Navigate} from 'react-router-dom';
 import './Login.css';
 import type { LoginForm, LoginRes } from '../../types';
 import { AuthContext } from '../../context/AuthContext';
@@ -39,11 +39,17 @@ export default function Login () {
         setLoading(true);
 
         try{
-            const data = await login(form.email, form.password );
+            const data = await userLogin(form.email, form.password );
 
+            //save the user and the token with context
+        
             login(data.user, data.token);
-            navigate('/projects');
+
+            //go to dashboard after user logs in
+            Navigate('/projects');
         } catch (err:any) {
-            setError()
+            setError(err.response.data.message || 'Your login has failed, Give it another go');
+        } finally {
+            setLoading(false);
         }
     }
