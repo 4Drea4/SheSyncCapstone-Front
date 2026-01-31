@@ -85,8 +85,18 @@ export default function Login () {
                     <form className="loginForm" onSubmit={handleSubmit}>
                         <div className="formField">
                             <label className="formLabel" htmlFor="email">
-                                
+                                What is your email address?
                             </label>
+                            <input
+                            className='input'
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={form.email}
+                            onChange={handleChange}
+                            placeholder=""
+                            autoComplete="email"
+                            />
                         </div>
                     </form>
                 </div>
