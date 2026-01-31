@@ -3,7 +3,7 @@ import {useNavigate, Link} from 'react-router-dom';
 import './Login.css';
 import type { LoginForm, LoginRes } from '../../types';
 import { AuthContext } from '../../context/AuthContext';
-import { login } from '../../api/users';
+import { userLogin } from '../../api/users';
 
 
 export default function Login () {
@@ -37,4 +37,13 @@ export default function Login () {
             return;
         }
         setLoading(true);
+
+        try{
+            const data = await login(form.email, form.password );
+
+            login(data.user, data.token);
+            navigate('/projects');
+        } catch (err:any) {
+            setError()
+        }
     }
