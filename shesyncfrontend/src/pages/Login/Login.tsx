@@ -57,6 +57,22 @@ export default function Login () {
 
     return (
         <div className='loginPage'>
-            
+            <form className='loginForm' onSubmit={handleSubmit}>
+                <h2> Welcome to Sync!</h2>
+
+                {error && <p className='error'>{error}</p>}
+
+                <input
+                type='email'
+                name='email'
+                placeholder='Enter your email'
+                value={form.email}
+                onChange={handleChange}
+                />
+                <input
+                type="password"
+                name="password"
+                placeholder=
+            </form>
         </div>
     )
