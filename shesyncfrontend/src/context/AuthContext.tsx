@@ -1,9 +1,11 @@
 import { createContext, useState, } from 'react';
 import type {ReactNode} from 'react';
+import type { User } from '../types';
+
 
 // what our auth will ask for
 type AuthContextType={
-    user: any | null;
+    user: User | null;
     token: string | null;
     login: (userData: any, token:string) => void;
     logout: () => void;
