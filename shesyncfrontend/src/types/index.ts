@@ -6,13 +6,13 @@
  };
 
  //login api response
- export type Login ={
+ export type LoginRes ={
     token:string;
     user: User;
  };
 
 //for login
-type FormState = {
+export type LoginForm = {
     email:string;
     password: string;
 };
