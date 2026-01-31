@@ -44,14 +44,19 @@ export default function Login () {
             const data = await userLogin(form.email, form.password );
 
             //save the user and the token with context
-        
             login(data.user, data.token);
 
             //go to dashboard after user logs in
-            Navigate('/projects');
+            navigate('/projects');
         } catch (err:any) {
             setError(err.response.data.message || 'Your login has failed, Give it another go');
         } finally {
             setLoading(false);
-        }
-    };
+        };
+    }
+
+    return (
+        <div className='loginPage'>
+            
+        </div>
+    )
