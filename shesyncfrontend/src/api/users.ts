@@ -1,5 +1,7 @@
 import api from './api';
 
+// created user api file for login and regsiter
+
 export type AuthResponse = {
     token:string,
     user:{
