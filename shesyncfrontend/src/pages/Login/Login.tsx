@@ -4,7 +4,7 @@ import './Login.css';
 import type { LoginForm } from '../../types';
 import { AuthContext } from '../../context/AuthContext';
 import { userLogin } from '../../api/users';
-
+import sheSyncLogo from 'frontend/designassets/logo.png';
 
 export default function Login () {
     const navigate = useNavigate();
@@ -64,9 +64,13 @@ export default function Login () {
                 <div className="loginLeftText">
                     <h1 className="loginWelcomeText">
                         So you want to <br/>
-                        get in 
+                        get in <span className="logo">
+                            <img src={sheSyncLogo} alt ="She Sync Logo"/>
+                        </span>
+                        <br/>
                         with your <em>tasks?</em>
                     </h1>
                 </div>
             </section>
-         
+            </div>
+        )}
