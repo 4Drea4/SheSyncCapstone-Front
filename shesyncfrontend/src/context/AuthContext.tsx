@@ -1,4 +1,5 @@
-import { createContext, useState, ReactNode } from 'react';
+import { createContext, useState, } from 'react';
+import type {ReactNode} from 'react';
 
 // what our auth will ask for
 type AuthContextType={
@@ -23,5 +24,19 @@ export function AuthProvider({children}: {children: ReactNode}) {
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(userData));
     };
-    
+
+    const logout = () => {
+        setUser(null);
+        setToken(null);
+
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+
+    };
+
+    return (
+        <AuthContext.Provider value={{ user, token, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
 }
