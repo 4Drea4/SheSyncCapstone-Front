@@ -58,18 +58,37 @@ export default function Login () {
     return (
         <div className='splitLoginPage'>
            
-           
             {/* left part */}
             <section className="loginLeft">
                 <div className="loginLeftText">
                     <h1 className="loginWelcomeText">
                         So you want to <br/>
-                        get in <span className="logo">
+                        get in
+                        <span className="logo">
                             <img src={sheSyncLogo} alt ="She Sync Logo"/>
                         </span>
                         <br/>
                         with your <em>tasks?</em>
                     </h1>
+                </div>
+            </section>
+
+            {/* right part */}
+            <section className='loginRight'>
+                <div className='loginSection'>
+                    <h2 className='loginTitle'>Welcome Back!</h2>
+
+                    <p className='loginTitle'>
+                        If you don't have an account.. <Link to="/register">Join us!</Link>
+                    </p>
+
+                    <form className="loginForm" onSubmit={handleSubmit}>
+                        <div className="formField">
+                            <label className="formLabel" htmlFor="email">
+                                
+                            </label>
+                        </div>
+                    </form>
                 </div>
             </section>
             </div>
