@@ -1,7 +1,7 @@
 import {useContext, useState} from 'react';
-import {useNavigate, Link, Navigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 import './Login.css';
-import type { LoginForm, LoginRes } from '../../types';
+import type { LoginForm } from '../../types';
 import { AuthContext } from '../../context/AuthContext';
 import { userLogin } from '../../api/users';
 
@@ -10,7 +10,11 @@ export default function Login () {
     const navigate = useNavigate();
     const auth = useContext(AuthContext);
 
-}
+    if(!auth){
+        return<p>We are still loading!  </p>
+    }
+        const {login} = auth;
+
 
     const [form,setForm] = useState<LoginForm>({
         email: "",
@@ -20,12 +24,10 @@ export default function Login () {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>("");
 
-    const {login } = auth;
-
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.target;
         setForm((prev) => ({ ...prev, [name]: value}));
-    }
+    };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -52,4 +54,4 @@ export default function Login () {
         } finally {
             setLoading(false);
         }
-    }
+    };
