@@ -10,9 +10,8 @@
     token:string;
     user: User;
  };
- 
-//for login
 
+//for login
 type FormState = {
     email:string;
     password: string;
