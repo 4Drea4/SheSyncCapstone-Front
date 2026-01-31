@@ -4,7 +4,7 @@ import './Login.css';
 import type { LoginForm } from '../../types';
 import { AuthContext } from '../../context/AuthContext';
 import { userLogin } from '../../api/users';
-import sheSyncLogo from 'frontend/designassets/logo.png';
+import sheSyncLogo from '../designassets/logo.png';
 
 export default function Login () {
     const navigate = useNavigate();
@@ -16,13 +16,12 @@ export default function Login () {
         const {login} = auth;
 
 
-    const [form,setForm] = useState<LoginForm>({
+    const [form, setForm] = useState<LoginForm>({
         email: "",
         password: "",
     });
 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string>("");
+    const [error, setError] = useState("");
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.target;
@@ -38,8 +37,6 @@ export default function Login () {
             setError("Enter your email and password hon! ");
             return;
         }
-        setLoading(true);
-
         try{
             const data = await userLogin(form.email, form.password );
 
@@ -49,11 +46,9 @@ export default function Login () {
             //go to dashboard after user logs in
             navigate('/projects');
         } catch (err:any) {
-            setError(err.response.data.message || 'Your login has failed, Give it another go');
-        } finally {
-            setLoading(false);
-        };
-    }
+            setError(err?.response?.data.message || 'Your login has failed, Give it another go');
+        }
+    };
 
     return (
         <div className='splitLoginPage'>
@@ -63,7 +58,7 @@ export default function Login () {
                 <div className="loginLeftText">
                     <h1 className="loginWelcomeText">
                         So you want to <br/>
-                        get in
+                        get in {" "}
                         <span className="logo">
                             <img src={sheSyncLogo} alt ="She Sync Logo"/>
                         </span>
@@ -78,12 +73,9 @@ export default function Login () {
                 <div className='loginSection'>
                     <h2 className='loginTitle'>Welcome Back!</h2>
 
-                    <p className='loginTitle'>
-                        If you don't have an account.. <Link to="/register">Join us!</Link>
-                    </p>
-
                     <form className="loginForm" onSubmit={handleSubmit}>
-                        <div className="formField">
+                        <div 
+                        className="formField">
                             <label className="formLabel" htmlFor="email">
                                 What is your email address?
                             </label>
@@ -98,8 +90,29 @@ export default function Login () {
                             autoComplete="email"
                             />
                         </div>
+
+                        <div className='loginForm'>
+                            <label className="formLabel"htmlFor="password">Let's do a super secrete password</label>
+                            <input
+                            className="input"
+                            id="password"
+                            name="password"
+                            type="password"
+                            value={form.password}
+                            onChange={handleChange}
+                            placeholder=""
+                            />
+                        </div>
+                            <button className="loginButton" type="submit">
+                            </button>
+                            <p className='loginTitle'>
+                        If you don't have an account.. <Link to="/register">Join us!</Link>
+                    </p>
                     </form>
                 </div>
             </section>
             </div>
-        )}
+        
+        )
+
+        }
