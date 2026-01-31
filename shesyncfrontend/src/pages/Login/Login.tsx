@@ -56,23 +56,17 @@ export default function Login () {
     }
 
     return (
-        <div className='loginPage'>
-            <form className='loginForm' onSubmit={handleSubmit}>
-                <h2> Welcome to Sync!</h2>
-
-                {error && <p className='error'>{error}</p>}
-
-                <input
-                type='email'
-                name='email'
-                placeholder='Enter your email'
-                value={form.email}
-                onChange={handleChange}
-                />
-                <input
-                type="password"
-                name="password"
-                placeholder=
-            </form>
-        </div>
-    )
+        <div className='splitLoginPage'>
+           
+           
+            {/* left part */}
+            <section className="loginLeft">
+                <div className="loginLeftText">
+                    <h1 className="loginWelcomeText">
+                        So you want to <br/>
+                        get in 
+                        with your <em>tasks?</em>
+                    </h1>
+                </div>
+            </section>
+         
