@@ -92,7 +92,7 @@ export default function Login () {
                         </div>
 
                         <div className='loginForm'>
-                            <label className="formLabel"htmlFor="password">Let's do a super secret password</label>
+                            <label className="formLabel"htmlFor="password">Enter your super secret password</label>
                             <input
                             className="input"
                             id="password"

@@ -92,8 +92,9 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-
-
+html, body, #root{
+    height: 100%;
+}
 
 body{
     margin: 0;
@@ -102,28 +103,35 @@ body{
 }
 .splitLoginPage{
     min-height: 100vh;
+    width:100%;
     display:grid;
     grid-template-columns: 1fr 1fr;
 }
 
 /* left */
 .loginLeft{
-    flex:1;
+    /* flex:1; */
     background:#E9FF86;
     display:flex;
     align-items: center;
     justify-content: center;
     padding: 60px;
+
 }
 .loginLeftText {
     max-width: 600px;
+    width: 100%;
+    
 }
 .loginWelcomeText{
     font-family: 'Instrument Serif' ,serif;
-    font-size: 64px;
+    font-size: 84px;
     margin: 0;
-    font-weight: 500;
+    font-weight: 550;
     color: #0E0C0C;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
 }
 .loginWelcomeText em{
     font-style: italic;
@@ -137,7 +145,7 @@ body{
 
 /* right side */
 .loginRight{
-    flex: 1;
+    /* flex: 1; */
     background-color: rgb(241, 245, 245);
     display: flex;
     align-items: center;
@@ -145,7 +153,7 @@ body{
 }
 .loginSection{
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 .loginTitle{
     font-size: 20px;
