@@ -51,5 +51,44 @@ export default function Register(){
             </section>
 
             {/* rightttt  */}
+            <section className='registerRight'>
+                <div className='registerSection'>
+                    <h2 className='registerTitle'>Create your Account</h2>
+                     {error ? <p className='registerError'>{error}</p> : null}
+
+                     <form className='registerForm' onSubmit={handleSubmit}>
+                        <div className='formField'>
+                            <label className='formLabel' htmlFor="username">
+                                Username
+                            </label>
+
+                            <input 
+                            className='input'
+                            id="username"
+                            name="username"
+                            type="text"
+                            value={form.username}
+                            onChange={handleChange}
+                            autoComplete='username'
+                            />
+
+                            <div className='formField'>
+                                <label className='formLabel' htmlFor='email'>Email</label>
+
+                                <input
+                                className="input"
+                                id="email"
+                                name="email"
+                                type="email"
+                                value={form.email}
+                                onChange={handleChange}
+                                autoComplete='email'
+                                />
+                            </div>
+                            
+                        </div>
+                     </form>
+                </div>
+            </section>
         </div>
     )
