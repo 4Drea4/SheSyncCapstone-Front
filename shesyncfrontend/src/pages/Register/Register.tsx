@@ -85,10 +85,30 @@ export default function Register(){
                                 autoComplete='email'
                                 />
                             </div>
-                            
+
+                        <div className='formField'>
+                            <label className='formLabel' htmlFor="password">
+                                Enter a Super Secret Password
+                            </label>
+                            <input 
+                            className='input'
+                                id='password'
+                                name='password'
+                                type='password'
+                                value={form.password}
+                                onChange={handleChange}
+                                />
+                        </div>
+                        <button className="registerButton" type="submit">
+                            Join the cult of the organized
+                        </button>
+                        <p className="registerLoginDisclaimer">
+                            If you already are one of us.. <Link to='/login'>Log in</Link>
+                        </p>
                         </div>
                      </form>
                 </div>
             </section>
         </div>
-    )
+    );
+}
