@@ -103,7 +103,7 @@ export default function Login () {
                             placeholder=""
                             />
                         </div>
-                            <button className="loginButton" type="submit">
+                            <button className="loginButton" type="submit">Login
                             </button>
                             <p className='loginTitle'>
                         If you don't have an account.. <Link to="/register">Join us!</Link>
