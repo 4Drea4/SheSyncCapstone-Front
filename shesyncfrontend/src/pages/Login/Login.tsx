@@ -4,7 +4,7 @@ import './Login.css';
 import type { LoginForm } from '../../types';
 import { AuthContext } from '../../context/AuthContext';
 import { userLogin } from '../../api/users';
-import sheSyncLogo from '../designassets/logo.png';
+import sheSyncLogo from '/public/logo.png';
 
 export default function Login () {
     const navigate = useNavigate();
