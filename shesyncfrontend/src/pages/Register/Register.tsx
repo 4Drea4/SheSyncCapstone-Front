@@ -3,6 +3,7 @@ import {useNavigate, Link} from 'react-router-dom';
 import './Register.css';
 import type { RegisterForm } from '../../types';
 import sheSyncLogo from '/public/logo.png';
+import { userRegister } from '../../api/users';
 
 export default function Register(){
     const navigate = useNavigate();
@@ -35,5 +36,7 @@ export default function Register(){
 };
 
     return (
-        
+        <div className='splitRegisterPage'>
+            {/* left siiddde */}
+        </div>
     )

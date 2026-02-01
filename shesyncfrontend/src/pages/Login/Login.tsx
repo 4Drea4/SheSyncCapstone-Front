@@ -56,7 +56,7 @@ export default function Login () {
             {/* left part */}
             <section className="loginLeft">
                 <div className="loginLeftText">
-                    <h1 className="loginWelcomeText">
+                    <h1 className="welcomeText">
                         So you want to <br/>
                         get in {" "}
                         <span className="logo">
