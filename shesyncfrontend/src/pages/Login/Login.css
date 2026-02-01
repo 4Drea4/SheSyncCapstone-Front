@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    font-family:'Poppings', system-ui, -apple-system, BlinkMacSystemFont,sans-serif; 
+}
 .splitLoginPage{
     min-height: 100vh;
     display:grid;
@@ -14,12 +18,13 @@
     padding: 60px;
 }
 .loginLeftText {
-    max-width: 500px;
+    max-width: 600px;
 }
 .loginWelcomeText{
+    font-family: 'Instrument Serif' ,serif;
     font-size: 64px;
     margin: 0;
-    font-weight: 600;
+    font-weight: 500;
     color: #0E0C0C;
 }
 .loginWelcomeText em{
@@ -29,12 +34,13 @@
 .logo img{
     display: inline-block;
     vertical-align: middle;
+    width: 200px;
 }
 
 /* right side */
 .loginRight{
     flex: 1;
-    background-color: azure;
+    background-color: rgb(241, 245, 245);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,6 +52,7 @@
 .loginTitle{
     font-size: 20px;
     margin-bottom: 1rem;
+    color: #FFB2E8;
 }
 
 .loginForm{
@@ -81,5 +88,14 @@
     border: none;
     background-color: #E9FF86;
     color:#0E0C0C;
-    
+}
+
+/* mobile  */
+@media (max-width: 900px){
+    .splitLoginPage{
+        flex-direction: column;
+    }
+    .loginWelcomeText{
+        font-size: 44px;
+    }
 }
