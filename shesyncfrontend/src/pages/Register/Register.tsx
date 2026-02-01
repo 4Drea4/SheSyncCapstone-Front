@@ -38,5 +38,18 @@ export default function Register(){
     return (
         <div className='splitRegisterPage'>
             {/* left siiddde */}
+            <section className='registerLeft'>
+                <div className='registerLeftText'>
+                    <h1 className='welcomeText'>Let's get you in <br/>
+                    <span className="logo">
+                            <img src={sheSyncLogo} alt ="She Sync Logo"/>
+                        </span>
+                        Organize your <em>projects</em> & <em>tasks</em>
+                        </h1>
+                  
+                </div>
+            </section>
+
+            {/* rightttt  */}
         </div>
     )
