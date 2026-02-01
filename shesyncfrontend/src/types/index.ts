@@ -16,3 +16,10 @@ export type LoginForm = {
     email:string;
     password: string;
 };
+
+//for registration to the site
+export type RegisterForm = {
+   username: string;
+   email: string;
+   password:string;
+}
