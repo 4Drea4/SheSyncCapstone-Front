@@ -44,8 +44,10 @@ export default function Register(){
                     <span className="logo">
                             <img src={sheSyncLogo} alt ="She Sync Logo"/>
                         </span>
-                        Organize your <em>projects</em> & <em>tasks</em>
+                       for real!
                         </h1>
+
+                        <p className='motivationText'>Create your account and start organizing life like you do your seasoning drawer </p>
                   
                 </div>
             </section>
