@@ -42,7 +42,7 @@ Here is my current design flow: ![Hifi Design Screens](designassets/hifi.png)
 5. Design:
   - Title: She Sync
   - Logo: ![Logo](designassets/logo.png)
-  - Colors : E9FF86, FFB2E8, F6F5AE , FC6431
+  - Colors : The neon green: E9FF86, The Pink: FFB2E8, F6F5AE , FC6431, black #0E0C0C
   - Font: Instrument Serif
 6. State Logic:
  So projects will have to be tracked I plan on using a drop down as I think that will make it much easier, and then the project selected will have to be loaded, because tasks are nested in projects that should be easier to handle than by user. A user will also have to update task status, add tasks, and delete tasks.
