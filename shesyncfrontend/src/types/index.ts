@@ -23,3 +23,16 @@ export type RegisterForm = {
    email: string;
    password:string;
 }
+
+export type Project = {
+   _id: string;
+   name: string;
+   description: string;
+   createdAt?: string;
+   updatedAt? : string;
+};
+
+export type CreateProjectInput = {
+   name: string;
+   description?: string;
+};
