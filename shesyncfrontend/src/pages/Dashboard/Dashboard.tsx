@@ -2,6 +2,8 @@ import { useEffect, useState} from 'react';
 import { getProjects} from '../../api/projects';
 import type { Project } from '../../types'; 
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
+import './Dashboard.css';
+import sheSyncLogo from '/logo.png'
 
 export default function Dashboard() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -22,6 +24,46 @@ useEffect(()=> {
         }
     return (
         <div className='dashboardPage'>
+
+            <header className="dashboardHeader">
+                <img className='dashboardLogo' src={sheSyncLogo} alt="Sync Logo"/>
+
+                <div className='dashboardSoundtrack'>
+                    <span>Master Planning Sountrack →</span>
+
+                {/* add my toggle here */}
+
+                 </div>
+                    <button className='logoutButton' type="button">Logout</button>
+               
+            </header>
+
+            {/* main section */}
+            <main className='dashboardMain'>
+                <div className='dashboardHero'>
+                    <h1 className="dashboardTitle">Hey girl!</h1>
+
+                    <p className="dashboardMessage">
+                    Want to get in
+                    <span className="logo">
+                            <img src={sheSyncLogo} alt ="She Sync Logo"/>
+                        </span> ? <br/> 
+                        Start here and create a 
+                       {" "} 
+                       <button 
+                       type="button"
+                       className="inlineProjectButton"
+                       onClick={()
+                        => { setShowProjectModal(true)}>
+                            New Project +
+                        </button> { " "}
+                       
+                      then you can assign <em>tasks!</em>
+                    </p>
+                    
+                </div>
+            </main>
+
             <div className='dashboardTop'>
                 <h1 className='dashboardTitle'>Project Management Bestie</h1>
                 <ProjectSelect
