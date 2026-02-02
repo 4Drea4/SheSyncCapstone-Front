@@ -4,6 +4,8 @@ import type { Project } from '../../types';
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
 import './Dashboard.css';
 import sheSyncLogo from '/logo.png'
+import flower from '/public/flowerpink.png'
+
 
 export default function Dashboard() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -41,7 +43,10 @@ useEffect(()=> {
             {/* main section */}
             <main className='dashboardMain'>
                 <div className='dashboardHero'>
-                    <h1 className="dashboardTitle">Hey girl!</h1>
+                    <h1 className="dashboardTitle">Hey girl!</h1> 
+                    <span className="pinkFlower">
+                            <img src={flower} alt ="Flower"/>
+                        </span> 
 
                     <p className="dashboardMessage">
                     Want to get in
@@ -60,7 +65,7 @@ useEffect(()=> {
                        
                       then you can assign <em>tasks!</em>
                     </p>
-                    
+
                 </div>
             </main>
 

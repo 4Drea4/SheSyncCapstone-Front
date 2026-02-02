@@ -3,6 +3,7 @@ import "./ProjectModal.css";
 import type { CreateProjectInput, Project } from '../../types';
 import {createProject } from '../../api/projects';
 
+
 type ProjectModalProps = {
     onClose: () => void;
     onCreated: (project: Project) => void; 
