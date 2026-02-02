@@ -1,6 +1,9 @@
-.dashBoardPage{
+.dashboardPage{
     min-height: 100vh;
     background-color: rgb(255, 255, 255);
+}
+.dashboardMain{
+    padding: 40px 28px;
 }
 .dashBoardTop{
     display: flex;
@@ -14,3 +17,87 @@
     font-size: 42px;
     margin: 0;
 }
+.dashboardHero {
+    max-width: 900px;
+}
+ .dashboardHeader{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+ }
+
+ .dashboardMessage{
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.2;
+ }
+ .logo img{
+    display: inline-block;
+    vertical-align: middle;
+    width: 130px;
+    height: auto;
+ }
+
+ .dashboardLogo{
+    width: 120px;
+    height: auto;
+ }
+.inlineProjectButton{
+    background: #ffb2e8;
+    border: none;
+    border-radius: 800px;
+   font-family: "Instrument-serif", serif;
+   font-size: 16px;
+   font-weight: 550px;
+   vertical-align: middle;
+}
+
+.dashboardSelectProject{
+    margin-top: 18px;
+    max-width: 360px;
+}
+.dashboardSoundtrack{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+}
+.pinkFlower img{
+    width: 70px;
+    height: auto;
+    display: block;
+
+}
+.logoutButton{
+    border-radius: 800px;
+    padding: 8px 14px;
+    background: transparent;
+    border: 1px solid #0e0e0e;
+}
+
+/* .toggle{
+    width: 80px;
+    height: 34px;
+    border: none;
+    position: relative;
+    background: #f4efb2;
+} */
+ /* .toggleDot{
+    width: 28px;
+    height: 28px;
+    background-color: #ff7a2f;
+    position: absolute;
+    top: 3px;
+    right: 5px;
+ } */
+
+ @media (max-width: 900px) {
+    .dashboardHeader{
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+    .dashBoardTitle{
+        font-size: 34px;
+    }
+ }
