@@ -83,9 +83,20 @@ export default function ProjectModal({onClose, onCreated} :ProjectModalProps) {
                         placeholder="Give me the deets!"
                         />
                     </div>
+                    <div className='modalButtons'>
+                        <button 
+                        type="button"
+                        className='secondaryButton'
+                        onClick={onClose}
+                        >Cancel</button>
+
+                        <button 
+                        type="submit"
+                        className="mainButton"
+                        >Create</button>
+                    </div>
                 </form>
             </div>
          </div>
-        
-    )
+    );
 }

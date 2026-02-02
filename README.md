@@ -45,7 +45,9 @@ Here is my current design flow: ![Hifi Design Screens](designassets/hifi.png)
   - Colors : The neon green: E9FF86, The Pink: FFB2E8, F6F5AE , FC6431, black #0E0C0C
   - Font: Instrument Serif
 6. State Logic:
- So projects will have to be tracked I plan on using a drop down as I think that will make it much easier, and then the project selected will have to be loaded, because tasks are nested in projects that should be easier to handle than by user. A user will also have to update task status, add tasks, and delete tasks.
+ So projects will have to be tracked I plan on using a drop down as I think that will make it much easier, and then the project selected will have to be loaded, because tasks are nested in projects that should be easier to handle than by user. A user will also have to update task status, add tasks, and delete tasks. 
+
+ So I just finished my login and register page yesterday and I had a dream that my Userflow was broken. I woke up and surely enough, I had no place to have the user add more projects, surely enough that was true however getting a consultation the fix will be to add the option for a new project in the project drop down that will trigger the project modal. 
 
 ### Resources:
 - [Hook Ideas](https://usehooks.com/)
@@ -54,3 +56,5 @@ Here is my current design flow: ![Hifi Design Screens](designassets/hifi.png)
 - [Music hook](https://dev.to/nicomartin/how-to-create-a-progressive-audio-player-with-react-hooks-31l1)
 - [Setup reminders](https://medium.com/@sindoojagajam2023/authentication-with-jwt-in-mern-stack-applications-c6edc05db11e)
 - [Axios](https://blog.logrocket.com/using-axios-with-react-native-manage-api-requests/#make-requests-api-using-axios)
+- [Dropdown select](https://www.youtube.com/watch?v=ARcbDPLL564)
+- []()
