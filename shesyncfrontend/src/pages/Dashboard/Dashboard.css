@@ -31,7 +31,7 @@
  }
 
  .dashboardMessage{
-    font-size: 18px;
+    font-size: 48px;
     margin: 0;
     line-height: 1.2;
  }
@@ -60,6 +60,9 @@
     margin-top: 18px;
     max-width: 360px;
 }
+.soundtrackText{
+    font-size: 15px;
+}
 .dashboardSoundtrack{
     display: flex;
     align-items: center;
@@ -79,26 +82,44 @@
     border: 1px solid #0e0e0e;
 }
 
-/* .toggle{
+.soundToggle{
     width: 80px;
     height: 34px;
+    border-radius: 800px;
+    padding: 0;
     border: none;
     position: relative;
     background: #f4efb2;
-} */
- /* .toggleDot{
+} 
+ .soundToggleDot{
     width: 28px;
     height: 28px;
     background-color: #ff7a2f;
     position: absolute;
     top: 3px;
     right: 5px;
- } */
+    border-radius: 50%;
+    transition: transform .25 ease;
+ }
 .inlineSelectWrap{
     display: inline-flex;
     vertical-align: middle;
     margin: 0 8px;
 }
+h1 , h2 {
+    font-family: "Instrument Serif", serif;
+}
+.dashboardLogo img{
+    width: 100px;
+    height: auto;
+}
+.greenFlower, .pinkFlower {
+ width: 100px;
+ height: auto;
+ animation: floatSpin 18s linear infinite;
+}
+
+
  @media (max-width: 900px) {
     .dashboardHeader{
         gap: 14px;
