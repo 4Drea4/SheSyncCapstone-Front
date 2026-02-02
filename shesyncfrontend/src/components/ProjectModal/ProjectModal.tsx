@@ -55,6 +55,37 @@ export default function ProjectModal({onClose, onCreated} :ProjectModalProps) {
     }
 
     return(
+         <div className='overlay' onClick={handleOverlayClick}>
+            <div className='modal'>
+                <div className='modalHeader'>
+                    <h2> Create a Project</h2>
+                    <button onClick={onClose}>Close</button>
+                </div>
 
+                <form className='modalBody' onSubmit={handleSubmit}>
+                    {error && <p className="errorText">{error}</p>}
+
+                    <div className='modalField'>
+                        <label>Project Name</label>
+                        <input
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Conquer the world in my red bottoms"
+                        />
+                    </div>
+                    <div className='modalField'>
+                        <label>Description</label>
+                        <textarea
+                        name="description"
+                        value={form.description}
+                        onChange={handleChange}
+                        placeholder="Give me the deets!"
+                        />
+                    </div>
+                </form>
+            </div>
+         </div>
+        
     )
 }
