@@ -3,9 +3,7 @@ import { getProjects} from '../../api/projects';
 import type { Project } from '../../types'; 
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
 
-export default function 
-
-Dashboard() {
+export default function Dashboard() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [selectedProjectId, setSelectedProjectId] = useState("");
     const  [showProjectModal, setShowProjectModal] = useState(false);
@@ -17,6 +15,7 @@ useEffect(()=> {
     }
     load();
 },[]);
+
     return (
         <div>
             <ProjectSelect
@@ -27,6 +26,7 @@ useEffect(()=> {
             />
             {showProjectModal && (
                 // i didnt create the project modal yet
+                <button onClick={()=> setShowProjectModal(false)}>Close This</button>
             )}
         </div>
     )
