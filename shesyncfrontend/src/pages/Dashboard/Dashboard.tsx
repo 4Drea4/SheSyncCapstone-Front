@@ -28,23 +28,58 @@ export default function Dashboard() {
 
     return (
         <div className='dashboardPage'>
+            <header className='dashboardHeader'>
+                <img className='dashboardLogo' src={sheSyncLogo} alt ="sync logo"/>
 
-            <header className="dashboardHeader">
-                <img className='dashboardLogo' src={sheSyncLogo} alt="Sync Logo"/>
-
-                <div className='dashboardSoundtrack'>
+                <div  className='dashboardSoundtrack'>
                     <span>Master Planning Sountrack →</span>
 
                 {/* add my toggle here */}
-                 </div>
+                <div className='soundToggle' aria-hidden='true'>
+                    <div className='soundToggleDot'/>
+                </div>
+                </div>
 
-                    <button className='logoutButton' type="button">Logout</button>
-               
+                <button className='logoutButton' type="button">Logout</button>
+
             </header>
 
+          <main className='dashboardMain'>
+            <div className='dashboardHero'>
+
+
+            </div>
+          </main>
+
+                <ProjectSelect
+                        projects={projects}
+                        selectedProjectId={selectedProjectId}
+                        onSelect={setSelectedProjectId}
+                        addNew={() => setShowProjectModal(true)}
+                        />
+                    </div>
+                {showProjectModal && (
+                // i didnt create the project modal yet
+                <ProjectModal
+                onClose={() => setShowProjectModal(false)}
+                onCreated={handleCreated}
+                />
+                )}   
+            </div>
+        
+
+             
+        </div>
+
+                <img className='dashboardLogo' src={sheSyncLogo} alt="Sync Logo"/>
+
+                
+
+         
+
             {/* main section */}
-            <main className='dashboardMain'>
-                <div className='dashboardHero'>
+       
+             
                     <h1 className="dashboardTitle">Hey girl!</h1> 
 
                     <span className="pinkFlower">
@@ -69,23 +104,6 @@ export default function Dashboard() {
                     </p>
 
                     <div className='dashboardSelectProject'>
-                        <ProjectSelect
-                        projects={projects}
-                        selectedProjectId={selectedProjectId}
-                        onSelect={setSelectedProjectId}
-                        addNew={() => setShowProjectModal(true)}
-                        />
-                    </div>
-                </div>
-            </main>
-
-            {showProjectModal && (
-                // i didnt create the project modal yet
-                <ProjectModal
-                onClose={() => setShowProjectModal(false)}
-                onCreated={handleCreated}
-                />
-                )}    
-        </div>
+                       
     );
 }

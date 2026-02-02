@@ -1,5 +1,6 @@
 .dashboardPage{
     min-height: 100vh;
+    padding: 24px;
     background-color: rgb(255, 255, 255);
 }
 .dashboardMain{
@@ -8,8 +9,9 @@
 .dashBoardTop{
     display: flex;
     flex-direction: column;
-    gap:8px;
+    gap:16px;
     max-width: 900px;
+    margin: 0 auto;
 }
 .dashBoardTitle{
     font-family: "Instrument Serif", serif;
