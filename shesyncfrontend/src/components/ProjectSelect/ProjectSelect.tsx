@@ -37,7 +37,7 @@ export default function ProjectSelect({
             onChange={handleChange}
             >
                 <option value="" disabled>
-                    Select your project!
+                    Select/ Create your project!
                 </option>
             {projects.map((p)=>(
                 <option key={p._id} value={p._id}>

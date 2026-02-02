@@ -45,65 +45,50 @@ export default function Dashboard() {
             </header>
 
           <main className='dashboardMain'>
-            <div className='dashboardHero'>
-
-
+            <section className='dashboardHero'>
+            <div className="mainRow">
+                <h1 className="heroTitle">Hey girl!</h1>
+                 <img className="pinkFlower" src={flower} alt ="Flower"/>
+                 <h1 className="heroTitle">
+                    Want to get in {" "}
+                    <span className='heroLogoInline'>
+                        <img src={sheSyncLogo} alt = "Sync Logo"/>
+                    </span> {" "} ? 
+                 </h1>
             </div>
-          </main>
 
-                <ProjectSelect
-                        projects={projects}
-                        selectedProjectId={selectedProjectId}
-                        onSelect={setSelectedProjectId}
-                        addNew={() => setShowProjectModal(true)}
-                        />
-                    </div>
-                {showProjectModal && (
-                // i didnt create the project modal yet
+            <div className='mainRow mainRowTwo'>
+                <img className='greenFlower' src={flower} alt="Flower"/>
+                <h2 className='mainSubtitle'>
+                    Start here and create a {" "}
+                    <button
+                    type="button"
+                    className="inlineProjectButton"
+                    onClick={()=> setShowProjectModal(true)}>
+                        New Project +
+                    </button>
+                </h2>
+                </div> 
+
+        <h2 className="mainSubtitle mainSubtitleLast">
+            then you can assign <em> tasks!</em>
+        </h2>
+
+        <div className='dashboardSelectProject'>
+            <ProjectSelect
+            projects={projects}
+            selectedProjectId={selectedProjectId}
+            onSelect={setSelectedProjectId}
+            addNew={() => setShowProjectModal(true)}
+            />
+        </div>
+        </section>
+        </main>
+            {showProjectModal && (
                 <ProjectModal
                 onClose={() => setShowProjectModal(false)}
                 onCreated={handleCreated}
                 />
-                )}   
-            </div>
-        
-
-             
-        </div>
-
-                <img className='dashboardLogo' src={sheSyncLogo} alt="Sync Logo"/>
-
-                
-
-         
-
-            {/* main section */}
-       
-             
-                    <h1 className="dashboardTitle">Hey girl!</h1> 
-
-                    <span className="pinkFlower">
-                            <img src={flower} alt ="Flower"/>
-                        </span> 
-
-                    <p className="dashboardMessage">
-                    Want to get in {" "}
-                    <span className="logo">
-                            <img src={sheSyncLogo} alt ="She Sync Logo"/>
-                        </span> ? <br/> 
-                        Start here and create a 
-                       {" "} 
-                       <button 
-                       type="button"
-                       className="inlineProjectButton"
-                       onClick={()=>  setShowProjectModal(true)}>
-                            New Project +
-                        </button> { " "}
-                       
-                      then you can assign <em>tasks!</em>
-                    </p>
-
-                    <div className='dashboardSelectProject'>
-                       
-    );
-}
+            )}
+                </div>
+    )}
