@@ -21,13 +21,27 @@ export default function ProjectSelect({
             addNew();
             return;
         }
-
         onSelect(value);
     };
 
     return (
         <div className="projectSelect">
-            
+            <label className="projectSelectLabel" htmlFor="projectSelect">
+                Pick your project
+            </label>
+
+            <select
+            id="projectSelect"
+            className="pickProjectSelect"
+            value={selectedProjectId}
+            onChange={handleChange}
+            >
+                <option value="" disabled>
+                    Select your project!
+                </option>
+
+
+            </select>
         </div>
     )
 }
