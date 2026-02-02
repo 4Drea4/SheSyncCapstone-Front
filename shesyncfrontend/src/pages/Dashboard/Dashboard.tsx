@@ -6,6 +6,7 @@ import './Dashboard.css';
 import sheSyncLogo from '/logo.png'
 import flower from '/flowerpink.png'
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
+import greenFlower from '/flowergreen.png'
 
 export default function Dashboard() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -58,37 +59,36 @@ export default function Dashboard() {
             </div>
 
             <div className='mainRow mainRowTwo'>
-                <img className='greenFlower' src={flower} alt="Flower"/>
+                <img className='greenFlower' src={greenFlower} alt="Flower"/>
+
                 <h2 className='mainSubtitle'>
                     Start here and create a {" "}
-                    <button
-                    type="button"
-                    className="inlineProjectButton"
-                    onClick={()=> setShowProjectModal(true)}>
-                        New Project +
-                    </button>
-                </h2>
-                </div> 
+                    <span className='inlineSelectWrap'>
+                        <ProjectSelect
+                        projects={projects}
+                        selectedProjectId={selectedProjectId}
+                        onSelect={setSelectedProjectId}
+                        addNew={() =>  setShowProjectModal(true)}
+                        />
+                    </span>
+                    </h2>
+                    </div>
 
-        <h2 className="mainSubtitle mainSubtitleLast">
-            then you can assign <em> tasks!</em>
-        </h2>
+                    <h2 className='mainSubtitle mainSubtitleLast'>
+                        then you can assign <em>tasks!</em>
 
-        <div className='dashboardSelectProject'>
-            <ProjectSelect
-            projects={projects}
-            selectedProjectId={selectedProjectId}
-            onSelect={setSelectedProjectId}
-            addNew={() => setShowProjectModal(true)}
+                    </h2>
+                    </section>
+                    </main>
+        {showProjectModal && (
+            <ProjectModal
+            onClose={() => setShowProjectModal(false)}
+            onCreated={handleCreated}
             />
+        )}
         </div>
-        </section>
-        </main>
-            {showProjectModal && (
-                <ProjectModal
-                onClose={() => setShowProjectModal(false)}
-                onCreated={handleCreated}
-                />
-            )}
-                </div>
-    )}
+    );
+}
+                    
+
+      
