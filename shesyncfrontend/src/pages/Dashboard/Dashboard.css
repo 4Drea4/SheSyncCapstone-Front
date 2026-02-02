@@ -1,0 +1,16 @@
+.dashBoardPage{
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+.dashBoardTop{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    max-width: 900px;
+}
+.dashBoardTitle{
+    font-family: "Instrument Serif", serif;
+    font-weight: 550;
+    font-size: 42px;
+    margin: 0;
+}
