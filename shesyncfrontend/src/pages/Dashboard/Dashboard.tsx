@@ -7,6 +7,7 @@ import sheSyncLogo from '/logo.png'
 import flower from '/flowerpink.png'
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import greenFlower from '/flowergreen.png'
+import SoundToggle from '../../components/SoundToggle/SoundToggle'
 
 export default function Dashboard() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -34,8 +35,7 @@ export default function Dashboard() {
 
                 <div  className='dashboardSoundtrack'>
                     <span>Master Planning Sountrack →</span>
-
-                {/* add my toggle here */}
+                <SoundToggle/>
                 <div className='soundToggle' aria-hidden='true'>
                     <div className='soundToggleDot'/>
                 </div>

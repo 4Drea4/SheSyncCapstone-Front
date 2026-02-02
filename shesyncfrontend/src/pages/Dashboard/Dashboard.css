@@ -94,7 +94,11 @@
     top: 3px;
     right: 5px;
  } */
-
+.inlineSelectWrap{
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 0 8px;
+}
  @media (max-width: 900px) {
     .dashboardHeader{
         gap: 14px;

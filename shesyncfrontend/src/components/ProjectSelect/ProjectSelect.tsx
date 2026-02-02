@@ -26,9 +26,6 @@ export default function ProjectSelect({
 
     return (
         <div className="projectSelect">
-            <label className="projectSelectLabel" htmlFor="projectSelect">
-                Pick your project
-            </label>
 
             <select
             id="projectSelect"
@@ -39,11 +36,13 @@ export default function ProjectSelect({
                 <option value="" disabled>
                     Select/ Create your project!
                 </option>
+
             {projects.map((p)=>(
                 <option key={p._id} value={p._id}>
                 {p.name}
             </option>
             ))}
+            
             <option value="new-project">Create a new project + </option>
             </select>
         </div>
