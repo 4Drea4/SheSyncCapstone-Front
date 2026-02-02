@@ -39,9 +39,22 @@ export default function ProjectModal({onClose, onCreated} :ProjectModalProps) {
             setSaving(true);
             const newProject = await createProject({
                 name: form.name.trim(),
-                description: form.description.trim(),
+                description: form.description?.trim(),
             });
-
+             onCreated(newProject);
+             onClose();
+        } catch (err:any) {
+            setError(err?.response?.data?.message || "Uh-oh we could not create this project")
+        } finally{
+            setSaving(false);
         }
     }
+
+    function handleOverlayClick(event: React.MouseEvent<HTMLDivElement>) {
+        if (event.target === event.currentTarget) onClose();
+    }
+
+    return(
+
+    )
 }
