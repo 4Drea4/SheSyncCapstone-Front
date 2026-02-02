@@ -17,7 +17,7 @@ export default function ProjectSelect({
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
 
-        if (value === '__new__'){
+        if (value === 'new-project'){
             addNew();
             return;
         }
@@ -39,8 +39,12 @@ export default function ProjectSelect({
                 <option value="" disabled>
                     Select your project!
                 </option>
-
-
+            {projects.map((p)=>(
+                <option key={p._id} value={p._id}>
+                {p.name}
+            </option>
+            ))}
+            <option value="new-project">Create a new project + </option>
             </select>
         </div>
     )
