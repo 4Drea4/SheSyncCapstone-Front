@@ -61,8 +61,7 @@ export default function Dashboard() {
                        <button 
                        type="button"
                        className="inlineProjectButton"
-                       onClick={()
-                        =>  setShowProjectModal(true)}>
+                       onClick={()=>  setShowProjectModal(true)}>
                             New Project +
                         </button> { " "}
                        
