@@ -17,6 +17,12 @@ export default function Dashboard() {
     const  [showProjectModal, setShowProjectModal] = useState(false);
     const [showTaskModal, setShowTaskModal] = useState(false);
 
+//tasks state
+    const [tasks, setTasks] = useState<Task[]>([]);
+    const [tasksLoading, setTasksLoading] = useState(false);
+    const [showTaskModal, setShowTaskModal] = useState(false);
+
+    //load projects
 
     useEffect(()=> {
     async function load(){
@@ -25,6 +31,14 @@ export default function Dashboard() {
     }
     load();
 },[]);
+
+//load tasks when the project is selected
+    useEffect(() => {
+        async function loadTasks(){
+            
+        }
+    })
+
 
         function handleCreated(project:Project) {
             setProjects((prev) => [project, ...prev]);
@@ -81,7 +95,6 @@ export default function Dashboard() {
                 <div className="mainRow mainRowThree">
                 <img className="pinkFlower" src={greenFlower} alt =" Green Flower"/>
                     <span className='mainText'>
-                   
                         then you can assign <em>tasks!</em>
                     </span>
                 </div>
