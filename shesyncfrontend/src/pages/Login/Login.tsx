@@ -44,7 +44,7 @@ export default function Login () {
             login(data.user, data.token);
 
             //go to dashboard after user logs in
-            navigate('/projects');
+            navigate('/dashboard');
         } catch (err:any) {
             setError(err?.response?.data.message || 'Your login has failed, Give it another go');
         }

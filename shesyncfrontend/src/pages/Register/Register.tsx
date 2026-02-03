@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {useNavigate, Link} from 'react-router-dom';
 import './Register.css';
 import type { RegisterForm } from '../../types';
-import sheSyncLogo from '/public/logo.png';
+import sheSyncLogo from '/logo.png';
 import { userRegister } from '../../api/users';
 
 export default function Register(){
@@ -63,6 +63,7 @@ export default function Register(){
                             <label className='formLabel' htmlFor="username">
                                 Username
                             </label>
+                            {error && <p className="loginError">{error}</p>}
 
                             <input 
                             className='input'
