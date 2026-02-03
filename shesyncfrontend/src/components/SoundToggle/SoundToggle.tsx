@@ -17,6 +17,8 @@ export default function SoundToggle(){
         
         </button>
     )
+
+    // inspired by this code I got citation in readme
 //     const Controls = () => {
 //         const [isPlaying, setIsPlaying] = useState(false);
 //         return (
