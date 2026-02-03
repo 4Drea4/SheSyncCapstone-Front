@@ -1,42 +1,53 @@
 import { useEffect, useState} from 'react';
+import { getTasks } from '../../api/tasks';
 import { getProjects} from '../../api/projects';
 import type { Project, Task } from '../../types'; 
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
-import './Dashboard.css';
-import sheSyncLogo from '/logo.png'
-import flower from '/flowerpink.png'
-import ProjectModal from '../../components/ProjectModal/ProjectModal';
-import greenFlower from '/flowergreen.png'
 import SoundToggle from '../../components/SoundToggle/SoundToggle'
 import TaskModal from '../../components/TaskModal/TaskModal';
-import { getTasks } from '../../api/tasks';
-
+import greenFlower from '/flowergreen.png';
+import sheSyncLogo from '/logo.png';
+import flower from '/flowerpink.png';
+import ProjectModal from '../../components/ProjectModal/ProjectModal';
+import './Dashboard.css';
 
 export default function Dashboard() {
 
     const [projects, setProjects] = useState<Project[]>([]);
     const [selectedProjectId, setSelectedProjectId] = useState("");
 
+    const [tasks, setTasks] = useState<Task[]>([]);
+
     const  [showProjectModal, setShowProjectModal] = useState(false);
     const [showTaskModal, setShowTaskModal] = useState(false);
-
-    const [tasks, setTasks] = useState<Task[]>([]);
-    
-
 
     //load projects
 
     useEffect(()=> {
-    async function load(){
+    async function loadProjects(){
         const data = await getProjects();
         setProjects(data);
     }
-    load();
+    loadProjects();
 },[]);
 
-    //find the selected project
+    
 
-    const selectedProject = projects.find((p) => p._id === selectedProjectId) || null;
+    //load the tasks when the project changes
+    useEffect(()=> {
+        async function loadTasks() {
+            if (!selectedProjectId) {
+                setTasks([]);
+                return;
+            }
+            const data = await getTasks(selectedProjectId)
+                setTasks(data);
+            }
+            loadTasks();
+        }, [selectedProjectId]);
+
+        //find the selected project
+        const selectedProject = projects.find((p) => p._id === selectedProjectId) || null;
 
 
         function handleCreated(project:Project) {
@@ -45,7 +56,9 @@ export default function Dashboard() {
             setSelectedProjectId(project._id);
         }
      
-
+        function handleTaskCreated(task: Task) {
+            setTasks((prev) => [task, ...prev]);
+        }
 
     return (
         <div className='dashboardPage'>
@@ -54,8 +67,7 @@ export default function Dashboard() {
 
                 <div  className='dashboardSoundtrack'>
                     <span className='soundtrackText'>Master Planning Sountrack →</span>
-                   
-                <SoundToggle/>
+                     <SoundToggle/>
                 </div>
 
                 <button className='logoutButton' type="button">Logout</button>
@@ -112,12 +124,22 @@ export default function Dashboard() {
                                 <h3 className='tasksTitle'>Tasks{selectedProject ? ` for "${selectedProject.name}"`: ""}  </h3>
                                 <button className='tasksAddButton' 
                                 type='button'
-                                
                                 onClick={()=> setShowTaskModal(true)}>
                                     + New Task
                                 </button>
                             </div>
                             <div className='tasksList'>
+                                {tasks.length === 0 ? (
+                                    <p className='tasksInstructions'>No tasks yet!</p>
+                                ) :(
+                                    tasks.map((task) => (
+                                        <div key={task._id} className='taskCard'>
+                                            <h4>{task.title}</h4>
+                                            {task.description && <p>{task.description}</p>}
+                                            <span className='taskStatus'>{task.status}</span>
+                                        </div>
+                                    ))
+                                )}
                                 <p className='tasksInstructions'>
                                     Your tasks for your project will be right here!
                                 </p>
