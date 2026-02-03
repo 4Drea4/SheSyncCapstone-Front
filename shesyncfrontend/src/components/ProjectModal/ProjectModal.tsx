@@ -93,8 +93,8 @@ export default function ProjectModal({onClose, onCreated} :ProjectModalProps) {
 
                         <button 
                         type="submit"
-                        className="mainButton"
-                        >Create</button>
+                        className="mainButton" disabled={saving}> {saving ? "Creating..." : "Create"}
+                       </button>
                     </div>
                 </form>
             </div>
