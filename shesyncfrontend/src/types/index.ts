@@ -36,3 +36,21 @@ export type CreateProjectInput = {
    name: string;
    description?: string;
 };
+
+export type TaskStatus = "todo" |  'Working On It' | 'Woohoo Done did it!'; 
+
+export type Task = {
+   _id: string;
+   title: string;
+   description?:string;
+   status: TaskStatus;
+   project: string;
+   createdAt: string;
+   updatedAt:string;
+}
+
+export type CreateTaskInput = {
+title: string;
+description? :string;
+status?: TaskStatus;
+}
