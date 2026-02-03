@@ -140,12 +140,9 @@ export default function Dashboard() {
                                         </div>
                                     ))
                                 )}
-                                <p className='tasksInstructions'>
-                                    Your tasks for your project will be right here!
-                                </p>
+                               
                             </div>
                         </div>
-
                     )}
                 </section>
                 </section>

@@ -149,7 +149,27 @@ h1 , h2 {
 .soundToggle.on .soundToggleDot{
     transform: translateX(17px);
 }
+/* tasks */
 
+.tasksArea{
+    margin-top: 36px;
+    width: 100%;
+    max-width: 800px;
+}
+.tasksHeader{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+}
+.tasksTitle{
+    font-family: "Instrument Serif", serif;
+    text-align: center;
+    font-weight: 550;
+    font-size: 38px;
+}
  @media (max-width: 900px) {
     .dashboardHeader{
         gap: 14px;
