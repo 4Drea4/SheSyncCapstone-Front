@@ -81,6 +81,29 @@ export default function Dashboard() {
                         then you can assign <em>tasks!</em>
                     </span>
                 </div>
+                {/* tasks */}
+                <section className='tasksArea'>
+                    {!selectedProjectId ? (
+                        <p className='tasksInstruction'>
+                            Select your project, to see your tasks
+                        </p>
+                    ):(
+                        <div>
+                            <div className='tasksHeader'>
+                                <h3 className='tasksTitle'>Tasks</h3>
+                                <button className='tasksAddButton' type='button'>
+                                    + New Task
+                                </button>
+                            </div>
+                            <div className='tasksList'>
+                                <p className='tasksInstructions'>
+                                    Your tasks for your project will be right here!
+                                </p>
+                            </div>
+                        </div>
+
+                    )}
+                </section>
                 </section>
                 </main>
 
