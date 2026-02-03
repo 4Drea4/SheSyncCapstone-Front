@@ -4,7 +4,7 @@ import './Login.css';
 import type { LoginForm } from '../../types';
 import { AuthContext } from '../../context/AuthContext';
 import { userLogin } from '../../api/users';
-import sheSyncLogo from '/public/logo.png';
+import sheSyncLogo from 'logo.png';
 
 export default function Login () {
     const navigate = useNavigate();
@@ -14,7 +14,6 @@ export default function Login () {
         return<p>We are still loading!  </p>
     }
         const {login} = auth;
-
 
     const [form, setForm] = useState<LoginForm>({
         email: "",
@@ -74,6 +73,7 @@ export default function Login () {
                     <h2 className='loginTitle'>Welcome Back!</h2>
 
                     <form className="loginForm" onSubmit={handleSubmit}>
+                        {error && <p className="loginError">{error}</p>}
                         <div 
                         className="formField">
                             <label className="formLabel" htmlFor="email">
