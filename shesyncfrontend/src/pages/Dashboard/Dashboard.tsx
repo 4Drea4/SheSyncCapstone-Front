@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 import { getProjects} from '../../api/projects';
-import type { Project } from '../../types'; 
+import type { Project , Task} from '../../types'; 
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
 import './Dashboard.css';
 import sheSyncLogo from '/logo.png'
@@ -8,11 +8,15 @@ import flower from '/flowerpink.png'
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import greenFlower from '/flowergreen.png'
 import SoundToggle from '../../components/SoundToggle/SoundToggle'
+import TaskModal from '../../components/TaskModal/TaskModal';
+import { getTasks } from '../../api/tasks';
 
 export default function Dashboard() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [selectedProjectId, setSelectedProjectId] = useState("");
     const  [showProjectModal, setShowProjectModal] = useState(false);
+    const [showTaskModal, setShowTaskModal] = useState(false);
+
 
     useEffect(()=> {
     async function load(){
@@ -84,14 +88,17 @@ export default function Dashboard() {
                 {/* tasks */}
                 <section className='tasksArea'>
                     {!selectedProjectId ? (
-                        <p className='tasksInstruction'>
+                        <p className='tasksInstructions'>
                             Select your project, to see your tasks
                         </p>
                     ):(
                         <div>
                             <div className='tasksHeader'>
                                 <h3 className='tasksTitle'>Tasks</h3>
-                                <button className='tasksAddButton' type='button'>
+                                <button className='tasksAddButton' 
+                                type='button'
+                                disabled={!selectedProjectId}
+                                onClick={()=> setShowTaskModal(true)}>
                                     + New Task
                                 </button>
                             </div>
@@ -112,6 +119,15 @@ export default function Dashboard() {
                 onClose={() => setShowProjectModal(false)}
                 onCreated={handleCreated}
             />
+            )}
+            {showTaskModal && selectedProjectId && (
+                <TaskModal
+                projectId={selectedProjectId}
+                onClose={() => setShowTaskModal(false)}
+                onCreated={(task) =>  {
+                    console.log("Created task", task);
+                }}
+                />
             )}
                 
         </div>

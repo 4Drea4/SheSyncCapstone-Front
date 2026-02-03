@@ -8,7 +8,7 @@ export async function getTasks(projectId: string): Promise<Task[]>
     return res.data;
 }
 
-//the task in the project
+//then create task in the project
 export async function createTask(
     projectId: string,
     input: CreateTaskInput) : Promise<Task> {
