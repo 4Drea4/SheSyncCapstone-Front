@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 import { getProjects} from '../../api/projects';
-import type { Project } from '../../types'; 
+import type { Project, Task } from '../../types'; 
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
 import './Dashboard.css';
 import sheSyncLogo from '/logo.png'
@@ -11,12 +11,17 @@ import SoundToggle from '../../components/SoundToggle/SoundToggle'
 import TaskModal from '../../components/TaskModal/TaskModal';
 import { getTasks } from '../../api/tasks';
 
+
 export default function Dashboard() {
+
     const [projects, setProjects] = useState<Project[]>([]);
     const [selectedProjectId, setSelectedProjectId] = useState("");
+
     const  [showProjectModal, setShowProjectModal] = useState(false);
     const [showTaskModal, setShowTaskModal] = useState(false);
 
+    const [tasks, setTasks] = useState<Task[]>([]);
+    
 
 
     //load projects
@@ -76,7 +81,7 @@ export default function Dashboard() {
 
             <div className='mainRow mainRowTwo'>
                 <span className='mainText'>
-                Start here and create a {" "}
+                Start here and create a Project 
                 <span className='inlineSelectWrap'>
                 <ProjectSelect
                         projects={projects}
