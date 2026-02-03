@@ -58,5 +58,35 @@ export default function TaskModal({projectId, onClose, onCreated}: TaskModalProp
         if (event.target === event.currentTarget) onClose();
     }
 
+    return (
+        <div className='overlay' onClick={handleOverlayClick}>
+            <div className='modal'>
+                <div className="modalHeader">
+                    <h2> Create your task</h2>
+                    <button type="button" onClick={onClose}> Close</button>
+                </div>
+
+                <form className='modalBody' onSubmit={handleSubmit}>
+
+                <div className='modalField'>
+                    <label htmlFor='title'>Task Title</label>
+
+                    <input
+                    id="title"
+                    name="title"
+                    value={form.title}
+                    onChange={handleChange}
+                    placeholder='i.e Finish Per Scholas Like a Boss!'
+                    />
+                    
+                </div>
+
+
+
+                </form>
+
+            </div>
+        </div>
     
+    )
 }
