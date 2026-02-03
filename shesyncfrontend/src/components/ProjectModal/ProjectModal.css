@@ -18,12 +18,15 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    padding: 16px 20px;
 }
 .modalHeader button {
     border: none;
     font-size: 14px;
     border-radius: 16px;
+    padding: 8px 12px;
+    border: 1px solid #0e0e0e;
+    background: transparent;
 }
 .modalHeader h2{
     margin: 0;
@@ -36,6 +39,7 @@
     flex-direction: column;
     gap: 10px;
     display: flex;
+    padding: 18px 20px 22px;
 }
 .modalField{
     display:flex;
