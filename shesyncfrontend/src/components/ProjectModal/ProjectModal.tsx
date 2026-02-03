@@ -87,7 +87,7 @@ export default function ProjectModal({onClose, onCreated} :ProjectModalProps) {
                     <div className='modalButtons'>
                         <button 
                         type="button"
-                        className='secondaryButton'
+                        className='secondButton'
                         onClick={onClose}
                         >Cancel</button>
 
