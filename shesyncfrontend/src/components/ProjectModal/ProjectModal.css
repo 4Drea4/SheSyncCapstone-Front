@@ -34,6 +34,12 @@
 .modalBody {
     flex-direction: column;
     gap: 10px;
+    display: flex;
+}
+.modalField{
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
 }
 .modalField label {
     font-size: 14px;
@@ -52,4 +58,37 @@
 .mainButton{
     background: #e9ff86;
     border: none;
+}
+
+.modalField input{
+    border: 1px solid #ffb2e8; 
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.modalField textarea {
+    min-height: 90px;
+    resize: vertical;
+    border: 1px solid #ffb2e8; 
+    padding: 10px 12px;
+    border-radius: 10px;
+
+}
+
+.modalButtons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.secondButton{
+    border-radius: 10px;
+    border: 1px solid #0e0e0e;
+    background: transparent;
+}
+.mainButton{
+    border-radius: 10px;
+    border: none;
+    background: #e9ff86;
+    padding: 10px 12px;
 }

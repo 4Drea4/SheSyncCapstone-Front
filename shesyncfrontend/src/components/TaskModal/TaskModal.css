@@ -1,0 +1,94 @@
+.overlay{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal{
+    background:white ;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.modalHeader{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+.modalHeader button {
+    border: none;
+    font-size: 14px;
+    border-radius: 16px;
+}
+.modalHeader h2{
+    margin: 0;
+    font-family: "Instrument Serif", serif;
+    font-size: 26px;
+    color: #0e0e0e;
+}
+
+.modalBody {
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+}
+.modalField{
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.modalField label {
+    font-size: 14px;
+    color: #0e0e0e;
+}
+
+.modalField textarea {
+    min-height: 96px;
+
+}
+.modalButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mainButton{
+    background: #e9ff86;
+    border: none;
+}
+
+.modalField input{
+    border: 1px solid #ffb2e8; 
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.modalField textarea {
+    min-height: 90px;
+    resize: vertical;
+    border: 1px solid #ffb2e8; 
+    padding: 10px 12px;
+    border-radius: 10px;
+
+}
+
+.modalButtons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.secondButton{
+    border-radius: 10px;
+    border: 1px solid #0e0e0e;
+    background: transparent;
+}
+.mainButton{
+    border-radius: 10px;
+    border: none;
+    background: #e9ff86;
+    padding: 10px 12px;
+}
