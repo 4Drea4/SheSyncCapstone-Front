@@ -92,3 +92,13 @@
     background: #e9ff86;
     padding: 10px 12px;
 }
+
+.statusSelector{
+    appearance: none;
+    width: 340px;
+    border: 2px solid #ffb2e8;
+    border-radius: 800px;
+    padding: 10px 40px  10px 14px;
+    font-family: "Instrument Serif", serif;
+}
+

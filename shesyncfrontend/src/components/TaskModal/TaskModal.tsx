@@ -93,8 +93,9 @@ export default function TaskModal({projectId, onClose, onCreated}: TaskModalProp
                 </div>
 
                 <div className='modalField'>
-                    <label htmlFor='status'>Status</label>
-                    <select id="status" name="status" value={form.status} onChange={handleChange}>
+
+                    <label htmlFor='status'>What's your Status?</label>
+                    <select id="status" name="status" value={form.status} className="statusSelector" onChange={handleChange}>
                     <option value="todo">todo</option>
                     <option value="Working On It"> Working On It</option>
                     <option value="Woohoo Done did it!">Woohoo Done Did it!</option>

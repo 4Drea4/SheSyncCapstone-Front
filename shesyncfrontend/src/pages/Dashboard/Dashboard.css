@@ -190,7 +190,7 @@ h1 , h2 {
     .tasksLists{
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 18px;
         margin-top: 16px;
     }
 
@@ -200,6 +200,7 @@ h1 , h2 {
         padding: 18px 22px;
         border-radius: 26px;
         border: 3px solid #ffb2e8;
+        gap: 5px;
     }
     .taskCardTitle{
         font-family: "Instrument Serif", serif;
@@ -226,7 +227,7 @@ h1 , h2 {
 
      .taskDeleteButton{
         font-size: 16px;
-        font-weight: 800;
+        font-weight: 600;
         background-color: transparent;
         right: 18px;
         position: absolute;
