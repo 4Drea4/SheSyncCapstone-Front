@@ -1,12 +1,14 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {useNavigate, Link} from 'react-router-dom';
 import './Register.css';
 import type { RegisterForm } from '../../types';
 import sheSyncLogo from '/logo.png';
-import { userRegister } from '../../api/users';
+import { userRegister, userLogin } from '../../api/users';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Register(){
     const navigate = useNavigate();
+    const auth = useContext(AuthContext);
 
     const [form, setForm] = useState<RegisterForm>({
         username: "",
@@ -15,6 +17,7 @@ export default function Register(){
     });
 
     const [error, setError] = useState("");
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.target;
         setForm((prev) => ({...prev, [name]: value}));
@@ -28,8 +31,16 @@ export default function Register(){
             return;
         }
         try {
+            //register 
             await userRegister(form.username, form.email, form.password);
-            navigate("/login");
+            
+            //login rightaway
+            const data = await userLogin(form.email , form.password);
+
+            // go to the dashbaord
+            auth?.login(data.user, data.token);
+            navigate("/dashboard");
+            
         } catch (err:any) {
             setError(err?.response?.data?.message || "Sorry looks like your registration failed, try again");
         }
