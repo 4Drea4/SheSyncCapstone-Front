@@ -80,8 +80,32 @@ export default function TaskModal({projectId, onClose, onCreated}: TaskModalProp
                     />
                     
                 </div>
+                <div className='modalField'>
+                    <label htmlFor='description'>Description</label>
+                    <textarea
+                    id="description"
+                    name="description"
+                    value={form.description || ""}
+                    onChange={handleChange}
+                    placeholder='Give me the deets!'
+                    />
 
+                </div>
 
+                <div className='modalField'>
+                    <label htmlFor='status'>Status</label>
+                    <select id="status" name="status" value={form.status} onChange={handleChange}>
+                    <option value="todo">todo</option>
+                    <option value="Working On It"> Working On It</option>
+                    <option value="Woohoo Done did it!">Woohoo Done Did it!</option>
+                    </select>
+                </div>
+                <div className='modalButtons'>
+                    <button type="button" className='secondButton' onClick={onClose}>Cancel
+
+                    </button>
+                <button type="submit" className="mainButton" disabled={saving}>{saving ? "Creating..." : "Create" }</button>
+                </div>
 
                 </form>
 
