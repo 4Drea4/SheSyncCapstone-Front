@@ -40,7 +40,7 @@ export default function Register(){
             // go to the dashbaord
             auth?.login(data.user, data.token);
             navigate("/dashboard");
-            
+
         } catch (err:any) {
             setError(err?.response?.data?.message || "Sorry looks like your registration failed, try again");
         }
@@ -67,7 +67,7 @@ export default function Register(){
             <section className='registerRight'>
                 <div className='registerSection'>
                     <h2 className='registerTitle'>Create your Account</h2>
-                     {error ? <p className='registerError'>{error}</p> : null}
+                     {error && <p className='registerError'>{error}</p> }
 
                      <form className='registerForm' onSubmit={handleSubmit}>
                         <div className='formField'>
