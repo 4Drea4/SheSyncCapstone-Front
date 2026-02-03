@@ -32,12 +32,9 @@ export default function Dashboard() {
     load();
 },[]);
 
-//load tasks when the project is selected
-    useEffect(() => {
-        async function loadTasks(){
-            
-        }
-    })
+    //find the selected project
+
+    const selectedProject = projects.find((p) => p._id === selectedProjectId) || null;
 
 
         function handleCreated(project:Project) {
@@ -45,6 +42,10 @@ export default function Dashboard() {
             // auto select the new project in this list
             setSelectedProjectId(project._id);
         }
+        function handleTaskCreated(task: Task) {
+            setTasks((prev) => [task, ...prev]);
+        }
+
 
     return (
         <div className='dashboardPage'>
