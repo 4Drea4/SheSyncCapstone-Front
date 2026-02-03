@@ -34,7 +34,8 @@ export default function Dashboard() {
                 <img className='dashboardLogo' src={sheSyncLogo} alt ="sync logo"/>
 
                 <div  className='dashboardSoundtrack'>
-                    <span>Master Planning Sountrack →</span>
+                    <span className='soundtrackText'>Master Planning Sountrack →</span>
+                   
                 <SoundToggle/>
                 </div>
 
