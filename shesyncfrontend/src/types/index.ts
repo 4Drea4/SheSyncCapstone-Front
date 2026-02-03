@@ -27,7 +27,7 @@ export type RegisterForm = {
 export type Project = {
    _id: string;
    name: string;
-   description: string;
+   description?: string;
    createdAt?: string;
    updatedAt? : string;
 };
@@ -45,8 +45,8 @@ export type Task = {
    description?:string;
    status: TaskStatus;
    project: string;
-   createdAt: string;
-   updatedAt:string;
+   createdAt?: string;
+   updatedAt?:string;
 }
 
 export type CreateTaskInput = {
