@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 import { getProjects} from '../../api/projects';
-import type { Project , Task} from '../../types'; 
+import type { Project } from '../../types'; 
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
 import './Dashboard.css';
 import sheSyncLogo from '/logo.png'
@@ -17,10 +17,7 @@ export default function Dashboard() {
     const  [showProjectModal, setShowProjectModal] = useState(false);
     const [showTaskModal, setShowTaskModal] = useState(false);
 
-//tasks state
-    const [tasks, setTasks] = useState<Task[]>([]);
-    const [tasksLoading, setTasksLoading] = useState(false);
-    const [showTaskModal, setShowTaskModal] = useState(false);
+
 
     //load projects
 
@@ -42,9 +39,7 @@ export default function Dashboard() {
             // auto select the new project in this list
             setSelectedProjectId(project._id);
         }
-        function handleTaskCreated(task: Task) {
-            setTasks((prev) => [task, ...prev]);
-        }
+     
 
 
     return (
@@ -99,6 +94,7 @@ export default function Dashboard() {
                         then you can assign <em>tasks!</em>
                     </span>
                 </div>
+
                 {/* tasks */}
                 <section className='tasksArea'>
                     {!selectedProjectId ? (
@@ -108,10 +104,10 @@ export default function Dashboard() {
                     ):(
                         <div>
                             <div className='tasksHeader'>
-                                <h3 className='tasksTitle'>Tasks</h3>
+                                <h3 className='tasksTitle'>Tasks{selectedProject ? ` for "${selectedProject.name}"`: ""}  </h3>
                                 <button className='tasksAddButton' 
                                 type='button'
-                                disabled={!selectedProjectId}
+                                
                                 onClick={()=> setShowTaskModal(true)}>
                                     + New Task
                                 </button>
