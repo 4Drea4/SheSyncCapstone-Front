@@ -134,9 +134,12 @@ export default function Dashboard() {
                                 ) :(
                                     tasks.map((task) => (
                                         <div key={task._id} className='taskCard'>
-                                            <h4>{task.title}</h4>
-                                            {task.description && <p>{task.description}</p>}
+                                            <h4 className='taskCardTitle'>{task.title}</h4>
+
+                                            {task.description && <p className='taskCardDescription'>{task.description}</p>}
                                             <span className='taskStatus'>{task.status}</span>
+
+                                            <button className='taskDeleteButton' type="button" >Delete</button>
                                         </div>
                                     ))
                                 )}

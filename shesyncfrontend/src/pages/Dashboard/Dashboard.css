@@ -194,6 +194,45 @@ h1 , h2 {
         margin-top: 16px;
     }
 
+    .taskCard{
+        width: 100%;
+        position: relative;
+        padding: 18px 22px;
+        border-radius: 26px;
+        border: 3px solid #ffb2e8;
+    }
+    .taskCardTitle{
+        font-family: "Instrument Serif", serif;
+        font-size: 20px;
+        font-weight: 650;
+        margin: 0 0 10px ;
+    }
+
+    .taskCardDescription{
+        margin: 0;
+        font-size: 16px;
+        max-width: 80%;
+    } 
+     .taskStatus{
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid #ff7a2f;
+        margin-top:12px ;
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 800px;
+
+     }
+
+     .taskDeleteButton{
+        font-size: 16px;
+        font-weight: 800;
+        background-color: transparent;
+        right: 18px;
+        position: absolute;
+     }
+
+
  @media (max-width: 900px) {
     .dashboardHeader{
         gap: 14px;
