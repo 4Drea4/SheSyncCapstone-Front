@@ -36,9 +36,6 @@ export default function Dashboard() {
                 <div  className='dashboardSoundtrack'>
                     <span>Master Planning Sountrack →</span>
                 <SoundToggle/>
-                <div className='soundToggle' aria-hidden='true'>
-                    <div className='soundToggleDot'/>
-                </div>
                 </div>
 
                 <button className='logoutButton' type="button">Logout</button>
@@ -47,9 +44,12 @@ export default function Dashboard() {
 
           <main className='dashboardMain'>
             <section className='dashboardHero'>
+
             <div className="mainRow">
-                <h1 className="mainText">Hey girl!</h1>
+                <span className="mainText">Hey girl!</span>
+
                  <img className="pinkFlower" src={flower} alt ="Flower"/>
+
                  <span className="mainText">
                  Want to get in {" "}
              
@@ -62,6 +62,7 @@ export default function Dashboard() {
             <div className='mainRow mainRowTwo'>
                 <span className='mainText'>
                 Start here and create a {" "}
+                <span className='inlineSelectWrap'>
                 <ProjectSelect
                         projects={projects}
                         selectedProjectId={selectedProjectId}
@@ -73,13 +74,21 @@ export default function Dashboard() {
                 </div>
 
                 <div className="mainRow mainRowThree">
+                <img className="pinkFlower" src={greenFlower} alt =" Green Flower"/>
                     <span className='mainText'>
+                   
                         then you can assign <em>tasks!</em>
                     </span>
                 </div>
                 </section>
                 </main>
 
+            {showProjectModal && (
+                <ProjectModal
+                onClose={() => setShowProjectModal(false)}
+                onCreated={handleCreated}
+            />
+            )}
                 
         </div>
     );
