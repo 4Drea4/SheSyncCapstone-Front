@@ -247,7 +247,21 @@ h1 , h2 {
     .dashBoardTitle{
         font-size: 34px;
     }
+    .dashboardLogo{
+        width: 45px;
+    }
+    .soundtrackText{
+        display: none;
+    }
+    .mainText{
+        font-size: 55px;
+    }
+    .greenFlower {
+        display: none;
+    }
  }
+
+ 
 /* Stack overflow keyframe spinning animation */
  @keyframes spin{
     100% {

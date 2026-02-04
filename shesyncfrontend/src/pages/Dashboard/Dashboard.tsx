@@ -115,7 +115,7 @@ export default function Dashboard() {
                 </div>
 
                 <div className="mainRow mainRowThree">
-                <img className="pinkFlower" src={greenFlower} alt =" Green Flower"/>
+                <img className="greenFlower" src={greenFlower} alt =" Green Flower"/>
                     <span className='mainText'>
                         then you can assign a
                     </span>

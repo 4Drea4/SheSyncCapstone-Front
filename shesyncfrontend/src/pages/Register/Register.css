@@ -230,3 +230,12 @@ color:#FFB2E8;
       width: 100px;
     }
 }
+
+@media (min-width: 900px) and (max-width: 1250px){
+  .welcomeText h1{
+    font-size: 64px;
+    font-weight: 600;
+  }
+  .logo img {
+    width: 100px;
+}}
