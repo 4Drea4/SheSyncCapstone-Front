@@ -2,6 +2,8 @@
 ## Andrea E
 *1/28/26*
 
+Link to Live: 
+
 ### Description
 Sync is a task management/project web application! 
 It is a way to manage your tasks and have them belong to projects. This allows you to stay organized and complete projects in an orderly fashion. 
@@ -40,8 +42,6 @@ Here is my current design flow: ![Hifi Design Screens](designassets/hifi.png)
     - Populated Tasks
 3. Reusable components
     - Form textboxes
-    - Buttons
-    - Header
     - Sidebar for projects
     - Project modal
     - Task modal
