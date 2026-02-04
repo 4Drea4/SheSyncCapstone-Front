@@ -181,12 +181,21 @@ export default function Dashboard() {
                                 ) :(
                                     tasks.map((task) => (
                                         <div key={task._id} className='taskCard'>
+                                            <div className='taskCardTop'>
                                             <h4 className='taskCardTitle'>{task.title}</h4>
+                                            <button className='taskDeleteButton' type="button" onClick={()=> handleDeleteTask(task._id)} >Delete</button>
 
-                                            {task.description && <p className='taskCardDescription'>{task.description}</p>}
+                                            {task.description && (<p className='taskCardDescription'>{task.description}</p>)}
+                                        <div className='taskCardBottom'> 
                                             <span className='taskStatus'>{task.status}</span>
+                                        <select
+                                        className='taskStatusSelect'
+                                        value={task.status}
+                                        onChange={(event) =>
+                                            handleStatusChange(task._id, event?.target.value as TaskStatus)
+                                        }
 
-                                            <button className='taskDeleteButton' type="button" >Delete</button>
+                                           
                                         </div>
                                     ))
                                 )}
