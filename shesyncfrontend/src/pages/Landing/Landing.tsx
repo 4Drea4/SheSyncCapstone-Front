@@ -3,7 +3,6 @@ import sheSyncLogo from '/logo.png';
 import landingVideo from "/landingVideo.mp4";
 import { useNavigate } from 'react-router-dom';
 
-
 export default function Landing(){
 const navigate = useNavigate();
 
@@ -25,7 +24,7 @@ const navigate = useNavigate();
                 </h1>
 
                 <p className="landingCommand">
-                    Don't set another reminder<br></br>
+                    {/* Don't set another reminder<br></br> */}
                     Get in
                 </p>
                 

@@ -24,30 +24,40 @@
     flex-direction: column;
     justify-content: center;
     color: black;
-    font-size: 35px;
+    font-size: 25px;
 
 }
 .landingCommand{
+    display: flex;
     align-items: center;
     text-align: center;
     font-family: "Instrument Serif", serif;
+    font-size: 35px;
 }
 .logo {
     height: 100px;
     display: inline-block;
+    
 }
-.landingCta{
+.calltoAction{
     text-decoration: none;
     background: #E9FF86;
     transition: transform .15s ease, box-shadow .15s ease;
-}
-.calltoAction{
     display: inline-block;
     padding: 14px 28px;
+    font-size: 16px;
     border-radius: 800;
-   
-
+    font-weight: 600;
+    border: 1px solid #0e0e0e ;
+    padding: 14px 20px;
+    border-radius: 800px;
 }
+
+     
+      
+   
+        
+        
 @media (max-width: 900px) {
     .landingSyncLine{font-size: 18px;}
     .landingHero{font-size: 40px;}
