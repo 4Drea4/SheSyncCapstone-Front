@@ -250,15 +250,16 @@ h1 , h2 {
     color: #0e0e0e;
     font-family: 'Instrument Serif', serif;
     border-radius: 800px;
-    padding: 6px 12px;
+    padding: 6px 30px;
+    justify-content: left;
     font-weight: 550;
     font-size: 18px;
     box-shadow: 0 6px 0 rgba(0, 0, 0, 0.06);
     transition: transform 120ms ease, box-shadow 120ms ease;
      /*  dropdown arrow */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%230E0C0C' d='M5.5 7.5 10 12l4.5-4.5 1.4 1.4L10 14.8 4.1 8.9z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 22px center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%230E0C0C' d='M5.5 7.5 10 12l4.5-4.5 1.4 1.4L10 14.8 4.1 8.9z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 24px center;
      }
 
      .projectDeleteButton{
