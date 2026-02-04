@@ -56,13 +56,12 @@ export default function Login () {
             <section className="loginLeft">
                 <div className="loginLeftText">
                     <h1 className="welcomeText">
-                        So you want to <br/>
-                        get in {" "}
+                        Get in {" "}
                         <span className="synclogo">
                             <img src={sheSyncLogo} alt ="She Sync Logo"/>
                         </span>
                         <br/>
-                        with your <em>tasks?</em>
+                        with your <em>tasks!</em>
                     </h1>
                 </div>
             </section>
