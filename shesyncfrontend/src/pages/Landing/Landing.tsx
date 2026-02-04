@@ -1,9 +1,12 @@
-import {Link} from "react-router-dom";
 import './Landing.css';
 import sheSyncLogo from '/logo.png';
 import landingVideo from "/landingVideo.mp4";
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Landing(){
+const navigate = useNavigate();
+
     return (
         <div className="landingPage">
             <video
@@ -30,7 +33,8 @@ export default function Landing(){
                     <img src={sheSyncLogo} className="logo" alt="She Sync Logo"/></span>
 
                 {/* </div> */}
-                <Link to="/register" className="calltoAction">Join the Cult</Link>
+                <button className="calltoAction"
+                onClick={()=> navigate("/register")}>Join the Cult</button>
             </div>
         </div>
     );
