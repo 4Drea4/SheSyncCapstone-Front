@@ -61,7 +61,7 @@ export default function Dashboard() {
         function handleTaskCreated(task: Task) {
             setTasks((prev) => [task, ...prev]);
         }
-
+        //temporary
         const auth = useContext(AuthContext);
         const navigate = useNavigate();
         function handleLogout(){
