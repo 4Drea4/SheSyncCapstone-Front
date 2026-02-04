@@ -58,7 +58,7 @@ export default function Register(){
                       
                         </h1>
 
-                        <p className='motivationText'>Create your account and start organizing life like you do your seasoning drawer </p>
+                       
                   
                 </div>
             </section>
