@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './TaskModal.css';
-import type { CreateTaskInput, Task, TaskStatus } from '../../types';
+import type { CreateTaskInput, Task } from '../../types';
 import {createTask} from '../../api/tasks';
 
 type TaskModalProps = {
@@ -98,7 +98,7 @@ export default function TaskModal({projectId, onClose, onCreated}: TaskModalProp
                     <select id="status" name="status" value={form.status} className="statusSelector" onChange={handleChange}>
                     <option value="todo">todo</option>
                     <option value="Working On It"> Working On It</option>
-                    <option value="Woohoo Done did it!">Woohoo Done Did it!</option>
+                    <option value="Woohoo Done did it!">Woohoo Done did it!</option>
                     </select>
                 </div>
                 <div className='modalButtons'>

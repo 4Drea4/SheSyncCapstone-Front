@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react';
+import { useContext, useEffect, useState} from 'react';
 import { getTasks } from '../../api/tasks';
 import { getProjects} from '../../api/projects';
 import type { Project, Task } from '../../types'; 
@@ -10,6 +10,8 @@ import sheSyncLogo from '/logo.png';
 import flower from '/flowerpink.png';
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import './Dashboard.css';
+import {AuthContext} from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
 
@@ -60,6 +62,13 @@ export default function Dashboard() {
             setTasks((prev) => [task, ...prev]);
         }
 
+        const auth = useContext(AuthContext);
+        const navigate = useNavigate();
+        function handleLogout(){
+            auth?.logout();
+            navigate('/login');
+        }
+
     return (
         <div className='dashboardPage'>
             <header className='dashboardHeader'>
@@ -70,7 +79,7 @@ export default function Dashboard() {
                      <SoundToggle/>
                 </div>
 
-                <button className='logoutButton' type="button">Logout</button>
+                <button className='logoutButton' type="button" onClick={handleLogout}>Logout</button>
 
             </header>
 
