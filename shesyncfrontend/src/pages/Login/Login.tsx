@@ -58,7 +58,7 @@ export default function Login () {
                     <h1 className="welcomeText">
                         So you want to <br/>
                         get in {" "}
-                        <span className="logo">
+                        <span className="synclogo">
                             <img src={sheSyncLogo} alt ="She Sync Logo"/>
                         </span>
                         <br/>

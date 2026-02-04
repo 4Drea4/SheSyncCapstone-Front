@@ -215,7 +215,12 @@ color:#FFB2E8;
     align-items: center;
     align-content: center;
 }
-
+.egisterLoginDisclaimer{
+  margin-top: 10px;
+}
+.registerButton{
+  margin-top: 20px;
+}
 /* mobile  */
 @media (max-width: 900px){
     .splitRegisterPage{
@@ -240,7 +245,7 @@ color:#FFB2E8;
     font-weight: 550;
   }
   .logo img {
-    width: 100px;
+    width: 150px;
 
 }
 .motivationText{
