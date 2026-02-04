@@ -265,7 +265,8 @@ h1 , h2 {
      .projectDeleteButton{
         border-radius: 800px;
         padding: 10px 14px;
-        border: 1px solid #0e0e0e ;
+        border: 1px solid #5ce1e6;
+        background: #5ce1e6;
      }
      .projectDeleteButton:disabled{
         opacity: .5;
