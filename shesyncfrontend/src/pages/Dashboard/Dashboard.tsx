@@ -117,8 +117,13 @@ export default function Dashboard() {
                 <div className="mainRow mainRowThree">
                 <img className="pinkFlower" src={greenFlower} alt =" Green Flower"/>
                     <span className='mainText'>
-                        then you can assign <em>tasks!</em>
+                        then you can assign a
                     </span>
+                    <button className='tasksAddButton' 
+                                type='button'
+                                onClick={()=> setShowTaskModal(true)}>
+                                    + New Task
+                                </button>
                 </div>
 
                 {/* tasks */}
@@ -131,11 +136,7 @@ export default function Dashboard() {
                         <div>
                             <div className='tasksHeader'>
                                 <h3 className='tasksTitle'>Tasks{selectedProject ? ` for "${selectedProject.name}"`: ""}  </h3>
-                                <button className='tasksAddButton' 
-                                type='button'
-                                onClick={()=> setShowTaskModal(true)}>
-                                    + New Task
-                                </button>
+                                
                             </div>
                             <div className='tasksList'>
                                 {tasks.length === 0 ? (

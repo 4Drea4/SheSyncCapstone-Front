@@ -38,14 +38,12 @@
 }
 .pickProjectSelect{
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     border: 1px solid #ffb2e8;
     background: #ffb2e8;
     color: #0e0e0e;
     font-family: 'Instrument Serif', serif;
     border-radius: 800px;
-    padding: 12px 46px 10px 18px; /* extra right space for arrow */
+    padding: 12px 46px 10px 18px; 
     font-weight: 550;
     font-size: 18px;
     box-shadow: 0 6px 0 rgba(0, 0, 0, 0.06);
