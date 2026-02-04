@@ -4,7 +4,7 @@ import type {Task, CreateTaskInput, TaskStatus} from '../types';
 //get my tasks
 export async function getTasks(projectId: string): Promise<Task[]>
 {
-    const res = await api.get<Task[]>(`tasks/project/${projectId}`);
+    const res = await api.get<Task[]>(`/tasks/project/${projectId}`);
     return res.data;
 }
 
@@ -20,7 +20,6 @@ export async function createTask(
 export async function updateTask(
     taskId: string,
     updates: Partial<{title:string; description?: string; status: TaskStatus  }>
-
 ) : Promise<Task> {
     const res = await api.put<Task>(`/tasks/${taskId}`, updates);
     return res.data;
@@ -30,5 +29,3 @@ export async function updateTask(
 export async function deleteTask(taskId: string):Promise<void> {
     await api.delete(`/tasks/${taskId}`);
 }
-
-//delete task

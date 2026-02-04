@@ -71,7 +71,7 @@ export default function Dashboard() {
         function handleTaskCreated(task: Task) {
             setTasks((prev) => [task, ...prev]);
         }
-        //temporary
+        //logout
         const auth = useContext(AuthContext);
         const navigate = useNavigate();
         function handleLogout(){
@@ -91,6 +91,7 @@ export default function Dashboard() {
             async function handleStatusChange(taskId:string, status:TaskStatus ) {
                 try {
                     const updated = await updateTask(taskId, {status});
+
                     setTasks((prev) => prev.map((task) => (task._id === taskId ? updated : task))) ;
                 } catch (err) {
                     console.error("Updating this task failed ", err);
@@ -184,7 +185,7 @@ export default function Dashboard() {
                                             <div className='taskCardTop'>
                                             <h4 className='taskCardTitle'>{task.title}</h4>
                                             <button className='taskDeleteButton' type="button" onClick={()=> handleDeleteTask(task._id)} >Delete</button>
-
+                                        </div>
                                             {task.description && (<p className='taskCardDescription'>{task.description}</p>)}
                                         <div className='taskCardBottom'> 
                                             <span className='taskStatus'>{task.status}</span>
@@ -194,8 +195,13 @@ export default function Dashboard() {
                                         onChange={(event) =>
                                             handleStatusChange(task._id, event?.target.value as TaskStatus)
                                         }
-
+                                        >
+                                         <option value="todo">todo</option>   
+                                         <option value ="Working On It">Working On It</option>
+                                         <option value="Woohoo Done did it!">Woohoo Done did it!</option>
+                                        </select>
                                            
+                                        </div>
                                         </div>
                                     ))
                                 )}
