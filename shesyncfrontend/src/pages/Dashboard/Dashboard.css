@@ -238,7 +238,23 @@ h1 , h2 {
         position: absolute;
      }
 
-
+     .taskStatusSelect{
+    appearance: none;
+    border: 1px solid #ffb2e8 ;
+    background: #ffb2e8;
+    color: #0e0e0e;
+    font-family: 'Instrument Serif', serif;
+    border-radius: 800px;
+    padding: 6px 12px;
+    font-weight: 550;
+    font-size: 18px;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.06);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+     /*  dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%230E0C0C' d='M5.5 7.5 10 12l4.5-4.5 1.4 1.4L10 14.8 4.1 8.9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+     }
  @media (max-width: 900px) {
     .dashboardHeader{
         gap: 14px;
