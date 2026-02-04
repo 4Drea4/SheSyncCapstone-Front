@@ -1,0 +1,37 @@
+.landingPage{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    width: 100%;
+}
+
+.landingVideo{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    object-fit: cover;
+    height: 100%
+}
+
+.landingText{
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.landingSyncLine img{
+    height: 36px
+}
+.landingCta{
+    text-decoration: none;
+    background: #E9FF86;
+    padding: 14px 28px;
+    border-radius: 800;
+    transition: transform .15s ease, box-shadow .15s ease;
+}

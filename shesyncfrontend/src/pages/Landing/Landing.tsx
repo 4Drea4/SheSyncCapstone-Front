@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import './Landing.css';
 import sheSyncLogo from '/logo.png';
-import landingVideo from "/landing-video.mp4";
+import landingVideo from "/landingVideo.mp4";
 
 export default function Landing(){
     return (
@@ -21,7 +21,7 @@ export default function Landing(){
                     Have a lot to do?
                 </h1>
 
-                <p className="landingsubText">
+                <p className="landingHeadline">
                     Don't set another reminder
                 </p>
                 <div className="landingSyncLine">
