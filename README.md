@@ -49,12 +49,11 @@ Here is my current design flow: ![Hifi Design Screens](designassets/hifi.png)
     - Status toggle or drop-down
 4. CRUD On:
    - User (partial)
-   - Projects
-   - Tasks 
+   - Projects( Create,Read, Delete)
+   - Tasks (Create,Read, Update, Delete)
 
 5. Design:
   - Title:  Sync
-  - Landing: ![LandingPage](/Untitled/landing.png)
   - Logo: ![Logo](designassets/logo.png)
   - Colors : The neon green: E9FF86, The Pink: FFB2E8, The yellow: F6F5AE , The orange: FC6431, black #0E0C0C
   - Font: Instrument Serif
