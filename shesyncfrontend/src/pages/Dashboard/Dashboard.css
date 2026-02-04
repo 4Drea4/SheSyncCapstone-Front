@@ -254,10 +254,22 @@ h1 , h2 {
         display: none;
     }
     .mainText{
-        font-size: 55px;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; */
+        
     }
-    .greenFlower {
+    .greenFlower , .pinkFlower{
         display: none;
+    }
+    .heroLogoInline img{
+        width: 75px;
+    }
+    .pickProjectSelect{
+        width: 150px;
+        display: block;
+      
     }
  }
 

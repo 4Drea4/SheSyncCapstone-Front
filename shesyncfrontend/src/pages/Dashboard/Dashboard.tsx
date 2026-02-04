@@ -102,7 +102,7 @@ export default function Dashboard() {
 
             <div className='mainRow mainRowTwo'>
                 <span className='mainText'>
-                Start here and create a Project 
+                Start here and create a project 
                 <span className='inlineSelectWrap'>
                 <ProjectSelect
                         projects={projects}
