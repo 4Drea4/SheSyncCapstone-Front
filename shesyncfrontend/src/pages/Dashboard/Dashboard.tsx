@@ -13,6 +13,8 @@ import './Dashboard.css';
 import {AuthContext} from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { updateTask, deleteTask } from '../../api/tasks';
+import {deleteProject} from '../../api/projects';
+
 
 
 export default function Dashboard() {
@@ -98,6 +100,25 @@ export default function Dashboard() {
                 }
             }
 
+            async function handleDeleteProject() {
+                if (!selectedProjectId) return;
+
+                if(!confirm("Do you really want to delete this project and the tasks assigned to it?"))
+                    return;
+
+                try{
+                     await deleteProject(selectedProjectId);
+
+                    setProjects((prev) => 
+                    prev.filter((p)=> p._id !== selectedProjectId)
+                    );
+                    setSelectedProjectId("");
+                    setTasks([]);
+                } catch (err) {
+                    console.error(err);
+                }
+                }
+            
             //okay so task cant be opened unless a project is
             function openTaskModal(){
                 if (!selectedProjectId) {
@@ -174,7 +195,12 @@ export default function Dashboard() {
                         <div>
                             <div className='tasksHeader'>
                                 <h3 className='tasksTitle'>Tasks{selectedProject ? ` for "${selectedProject.name}"`: ""}  </h3>
-                                
+                                <button 
+                                type="button"
+                                className='projectDeleteButton'
+                                onClick={handleDeleteProject}
+                                disabled={!selectedProjectId}
+                                > Delete Project</button>
                             </div>
                             <div className='tasksList'>
                                 {tasks.length === 0 ? (

@@ -130,10 +130,15 @@ h1 , h2 {
     font-family: "Instrument Serif", serif;
 }
 
-.greenFlower, .pinkFlower {
+.greenFlower {
  width: 100px;
  height: auto;
- animation: spin 18s linear infinite;
+ animation: greenspin 10s linear infinite;
+}
+.pinkFlower{
+    width: 100px;
+    height: auto;
+    animation: pinkspin 18s linear infinite;
 }
 
 .heroLogoInline img{
@@ -255,6 +260,16 @@ h1 , h2 {
   background-repeat: no-repeat;
   background-position: right 22px center;
      }
+
+     .projectDeleteButton{
+        border-radius: 800px;
+        padding: 10px 14px;
+        border: 1px solid #0e0e0e ;
+     }
+     .projectDeleteButton:disabled{
+        opacity: .5;
+        cursor: not-allowed;
+     }
  @media (max-width: 900px) {
     .dashboardHeader{
         gap: 14px;
@@ -291,8 +306,14 @@ h1 , h2 {
 
  
 /* Stack overflow keyframe spinning animation */
- @keyframes spin{
-    100% {
-        transform: rotate(360deg) translateY(0);
+ @keyframes greenspin{
+    80% {
+        transform: rotate(360deg) translateX(0);
       }
+     
     }
+    @keyframes  pinkspin{
+        100% {
+            transform: rotate(360deg) translateX(0);
+        }
+      }
