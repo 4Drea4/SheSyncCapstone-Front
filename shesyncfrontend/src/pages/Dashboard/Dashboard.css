@@ -241,6 +241,9 @@ h1 , h2 {
         background-color: transparent;
         right: 18px;
         position: absolute;
+        border: 1px solid #87cb28 ;
+        padding: 10px 14px;
+        border-radius: 800px;
      }
 
      .taskStatusSelect{

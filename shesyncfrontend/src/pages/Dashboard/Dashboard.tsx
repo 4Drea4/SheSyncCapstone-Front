@@ -180,7 +180,7 @@ export default function Dashboard() {
                     </span>
                     <button className='tasksAddButton' 
                                 type='button'
-                                onClick={()=> setShowTaskModal(true)}>
+                                onClick={openTaskModal}>
                                     + New Task
                                 </button>
                 </div>
@@ -249,9 +249,8 @@ export default function Dashboard() {
                 <TaskModal
                 projectId={selectedProjectId}
                 onClose={() => setShowTaskModal(false)}
-                onCreated={(task) =>  {
-                    console.log("Created task", task);
-                }}
+                onCreated={handleTaskCreated}
+                    
                 />
             )}
                 
