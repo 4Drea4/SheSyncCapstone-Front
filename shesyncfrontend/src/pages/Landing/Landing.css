@@ -2,7 +2,6 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-    color: #fff;
     width: 100%;
 }
 
@@ -24,21 +23,30 @@
     flex-direction: column;
     justify-content: center;
     color: black;
-    font-size: 25px;
+   
 
 }
-.landingCommand{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-family: "Instrument Serif", serif;
-    font-size: 35px;
+.landingHero{
+    font-size: 80px;
+    font-family: "Instrument Serif" ,serif;
+    font-weight: 550;
 }
+.landingCommand{
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    white-space: nowrap;
+    font-size: 55px;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+}
+
 .logo {
     height: 100px;
-    display: inline-block;
-    
+    display: block;
+    width:auto;
 }
+
 .calltoAction{
     text-decoration: none;
     background: #E9FF86;
@@ -53,10 +61,11 @@
     border-radius: 800px;
 }
 
-     
-      
-   
-        
+.landingLogoInline img{
+    width: auto;
+    display: block;
+    height: 18px;
+}
         
 @media (max-width: 900px) {
     .landingSyncLine{font-size: 18px;}

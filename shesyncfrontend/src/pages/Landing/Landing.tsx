@@ -24,12 +24,14 @@ const navigate = useNavigate();
                 </h1>
 
                 <p className="landingCommand">
-                    {/* Don't set another reminder<br></br> */}
-                    Get in
+                    {/* Don't set another reminder<br/> */}
+                    Get in {" "}
+                     <span>
+                        <img src={sheSyncLogo} className='logo' alt="She Sync Logo"/>
+                        </span>
                 </p>
                 
-                    <span>
-                    <img src={sheSyncLogo} className="logo" alt="She Sync Logo"/></span>
+                    
 
                 {/* </div> */}
                 <button className="calltoAction"
