@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState} from 'react';
 import { getTasks } from '../../api/tasks';
 import { getProjects} from '../../api/projects';
-import type { Project, Task } from '../../types'; 
+import type { Project, Task, TaskStatus } from '../../types'; 
 import ProjectSelect from '../../components/ProjectSelect/ProjectSelect';
 import SoundToggle from '../../components/SoundToggle/SoundToggle'
 import TaskModal from '../../components/TaskModal/TaskModal';
@@ -12,6 +12,8 @@ import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import './Dashboard.css';
 import {AuthContext} from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { updateTask, deleteTask } from '../../api/tasks';
+
 
 export default function Dashboard() {
 
@@ -27,13 +29,16 @@ export default function Dashboard() {
 
     useEffect(()=> {
     async function loadProjects(){
-        const data = await getProjects();
-        setProjects(data);
+        try{
+            const data = await getProjects();
+            setProjects(data);
+        } catch (err) {
+            console.error("Had a problem loading your projects")
+        }
     }
     loadProjects();
 },[]);
 
-    
 
     //load the tasks when the project changes
     useEffect(()=> {
@@ -42,9 +47,14 @@ export default function Dashboard() {
                 setTasks([]);
                 return;
             }
-            const data = await getTasks(selectedProjectId)
+            try {
+                const data = await getTasks(selectedProjectId)
                 setTasks(data);
+            } catch (err) {
+                console.error("Error loading your tasks", err);
+                setTasks([]);
             }
+        }
             loadTasks();
         }, [selectedProjectId]);
 
@@ -68,6 +78,33 @@ export default function Dashboard() {
             auth?.logout();
             navigate('/login');
         }
+
+        async function handleDeleteTask(taskId: string) {
+            try {
+                await deleteTask(taskId);
+                setTasks((prev)=> prev.filter((task) => task._id !== taskId )) ;
+            } catch (err) {
+                console.error('Uh-oh could not delete the task' , err);
+            }
+            }
+
+            async function handleStatusChange(taskId:string, status:TaskStatus ) {
+                try {
+                    const updated = await updateTask(taskId, {status});
+                    setTasks((prev) => prev.map((task) => (task._id === taskId ? updated : task))) ;
+                } catch (err) {
+                    console.error("Updating this task failed ", err);
+                }
+            }
+
+            //okay so task cant be opened unless a project is
+            function openTaskModal(){
+                if (!selectedProjectId) {
+                    alert("You have to pick a project first darling");
+                    return;
+                } setShowTaskModal(true);
+            }
+        
 
     return (
         <div className='dashboardPage'>
