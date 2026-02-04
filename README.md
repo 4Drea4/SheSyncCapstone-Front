@@ -2,7 +2,20 @@
 ## Andrea E
 *1/28/26*
 
+### Description
+Sync is a task management/project web application! 
+It is a way to manage your tasks and have them belong to projects. This allows you to stay organized and complete projects in an orderly fashion. 
+
 ### Install Instructions
+To get this project:
+
+1. git clone this link <https://github.com/4Drea4/SheSyncCapstone-Front.git>
+2. cd into the shesyncfrontend
+3. npm install
+4. npm run dev
+5. Then you will create your .env file:
+    - VITE_API_URL=http://localhost:3000
+
 
 ### Planning
 In the design phase I have already designed 4 iterations of one design and one iteration of another. I am done designing but think there was a better way to streamline the User Flow so that I could use less screens. However I do think because so much of my designs I designed to be re-used as either components, or have the same style that will allow me to cut down on time when it comes to design and styling.
@@ -41,14 +54,18 @@ Here is my current design flow: ![Hifi Design Screens](designassets/hifi.png)
 
 5. Design:
   - Title:  Sync
-  - Landing: ![LandingPage](/landing.png)
+  - Landing: ![LandingPage](/public/landing.png)
   - Logo: ![Logo](designassets/logo.png)
   - Colors : The neon green: E9FF86, The Pink: FFB2E8, The yellow: F6F5AE , The orange: FC6431, black #0E0C0C
   - Font: Instrument Serif
 6. State Logic:
  So projects will have to be tracked I plan on using a drop down as I think that will make it much easier, and then the project selected will have to be loaded, because tasks are nested in projects that should be easier to handle than by user. A user will also have to update task status, add tasks, and delete tasks. 
 
- So I just finished my login and register page yesterday and I had a dream that my Userflow was broken. I woke up and surely enough, I had no place to have the user add more projects, surely enough that was true however getting a consultation the fix will be to add the option for a new project in the project drop down that will trigger the project modal. 
+ ### Retrospect
+
+ - So I just finished my login and register page yesterday and I had a dream that my Userflow was broken. I woke up and surely enough, I had no place to have the user add more projects, surely enough that was true however getting a consultation the fix will be to add the option for a new project in the project drop down that will trigger the project modal. 
+ - During my planning phase I designed multiple screens and planned my user flow, as well as what I would have to build out. I quickly learned that my planned userflow was not as efficient as I originally thought. 
+ - My final state logic is that my projects are loaded after authentication, tasks belong to the project, selecting your project automatically loads your tasks, your tasks status can be updatated on the task, modals are used to give the task and project details. 
 
 ### Resources:
 - [Hook Ideas](https://usehooks.com/)
