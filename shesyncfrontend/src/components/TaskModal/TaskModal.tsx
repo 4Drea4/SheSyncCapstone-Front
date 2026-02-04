@@ -67,6 +67,7 @@ export default function TaskModal({projectId, onClose, onCreated}: TaskModalProp
                 </div>
 
                 <form className='modalBody' onSubmit={handleSubmit}>
+                    {error && <p className='errorText'>{error}</p>}
 
                 <div className='modalField'>
                     <label htmlFor='title'>Task Title</label>
