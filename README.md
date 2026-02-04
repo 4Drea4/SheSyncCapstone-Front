@@ -40,7 +40,8 @@ Here is my current design flow: ![Hifi Design Screens](designassets/hifi.png)
    - Tasks 
 
 5. Design:
-  - Title: She Sync
+  - Title:  Sync
+  - Landing: ![LandingPage](/landing.png)
   - Logo: ![Logo](designassets/logo.png)
   - Colors : The neon green: E9FF86, The Pink: FFB2E8, The yellow: F6F5AE , The orange: FC6431, black #0E0C0C
   - Font: Instrument Serif

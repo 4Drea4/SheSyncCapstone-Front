@@ -23,15 +23,32 @@
     position: relative;
     flex-direction: column;
     justify-content: center;
+    color: black;
+    font-size: 35px;
 
 }
-.landingSyncLine img{
-    height: 36px
+.landingCommand{
+    align-items: center;
+    text-align: center;
+    font-family: "Instrument Serif", serif;
+}
+.logo {
+    height: 100px;
+    display: inline-block;
 }
 .landingCta{
     text-decoration: none;
     background: #E9FF86;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.calltoAction{
+    display: inline-block;
     padding: 14px 28px;
     border-radius: 800;
-    transition: transform .15s ease, box-shadow .15s ease;
+   
+
+}
+@media (max-width: 900px) {
+    .landingSyncLine{font-size: 18px;}
+    .landingHero{font-size: 40px;}
 }

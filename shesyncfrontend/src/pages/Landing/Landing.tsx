@@ -17,18 +17,19 @@ export default function Landing(){
             </video>
 
             <div className="landingText">
-                <h1 className="landingHeadline">
+                <h1 className="landingHero">
                     Have a lot to do?
                 </h1>
 
-                <p className="landingHeadline">
-                    Don't set another reminder
+                <p className="landingCommand">
+                    Don't set another reminder<br></br>
+                    Get in
                 </p>
-                <div className="landingSyncLine">
-                    <span>Get in</span>
-                    <img src={sheSyncLogo} alt="She Sync Logo"/>
+                
+                    <span>
+                    <img src={sheSyncLogo} className="logo" alt="She Sync Logo"/></span>
 
-                </div>
+                {/* </div> */}
                 <Link to="/register" className="calltoAction">Join the Cult</Link>
             </div>
         </div>
