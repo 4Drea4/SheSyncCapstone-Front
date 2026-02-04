@@ -209,6 +209,9 @@ body{
     .logo img {
       width: 100px;
     }
+    .loginTitle{
+      margin-top: 10px;
+    }
 }
 
 @media (min-width: 900px) and (max-width: 1250px){
