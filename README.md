@@ -3,7 +3,8 @@
 *1/28/26*
 
 Link to Live: [Site](https://shesynccapstone-front.onrender.com/)
-
+Backend Repo: [Repo](https://github.com/4Drea4/SheSyncCapstone-Back)
+Link to live: [Back](https://dashboard.render.com/web/srv-d61rvnp4tr6s739fvgc0)
 ### Description
 Sync is a task management/project web application! 
 It is a way to manage your tasks and have them belong to projects. This allows you to stay organized and complete projects in an orderly fashion. 
@@ -17,7 +18,7 @@ To get this project:
 4. npm run dev
 5. Then you will create your .env file:
     - VITE_API_URL=http://localhost:3000
-
+6. To get the backend repo and instructions please see: <https://github.com/4Drea4/SheSyncCapstone-Back>
 
 ### Planning
 In the design phase I have already designed 4 iterations of one design and one iteration of another. I am done designing but think there was a better way to streamline the User Flow so that I could use less screens. However I do think because so much of my designs I designed to be re-used as either components, or have the same style that will allow me to cut down on time when it comes to design and styling.
