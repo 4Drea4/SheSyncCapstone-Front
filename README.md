@@ -2,7 +2,7 @@
 ## Andrea E
 *1/28/26*
 
-Link to Live: 
+Link to Live: [Site](https://shesynccapstone-front.onrender.com/)
 
 ### Description
 Sync is a task management/project web application! 
