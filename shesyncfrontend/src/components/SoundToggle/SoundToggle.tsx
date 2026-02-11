@@ -1,33 +1,20 @@
-import { useState } from "react"
-import './SoundToggle.css'
+import { useContext } from "react";
+import "./SoundToggle.css";
+import { MusicContext } from "../../context/MusicContext";
 
-export default function SoundToggle(){
-    const [isOn, setIsOn] = useState(true);
-    function toggleSound(){
-        setIsOn((prev) => !prev);
+export default function SoundToggle() {
+  const music = useContext(MusicContext);
 
-    }
-    return (
-        <button
-        type="button"
-        className={`soundToggle ${isOn ? "on" : "off"}`}
-        onClick={toggleSound}
-        aria-label="Toggle soundtrack">
-            <span className="soundToggleDot"/>
-        
-        </button>
-    )
+  if (!music) return null;
 
-    // inspired by this code I got citation in readme
-//     const Controls = () => {
-//         const [isPlaying, setIsPlaying] = useState(false);
-//         return (
-//             <button>
-//           {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
-//         </button>
-//         <button></button>
-//         <button onClick={togglePlayPause}>
-//   {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
-// </button>
-
+  return (
+    <button
+      type="button"
+      className={`soundToggle ${music.isOn ? "on" : ""}`}
+      onClick={music.toggle}
+      aria-label={music.isOn ? "Turn music off" : "Turn music on"}
+    >
+      <span className="soundToggleDot" />
+    </button>
+  );
 }
