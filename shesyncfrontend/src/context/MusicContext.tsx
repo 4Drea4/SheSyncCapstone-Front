@@ -20,7 +20,7 @@ export function MusicProvider({ children }: { children: React.ReactNode }) {
 
   // Create the audio element once
   useEffect(() => {
-    const audio = new Audio(new URL("../assets/music.mp3", import.meta.url).toString());
+    const audio = new Audio(new URL("../assets/lofibeat.mp3", import.meta.url).toString());
     audio.loop = true;
     audio.volume = 0.35;
     audioRef.current = audio;
